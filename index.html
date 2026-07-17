@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timetable · BBA 5th Semester · RIMS BBA '24</title>
+<meta name="description" content="Weekly timetable, full syllabus, and internship report & project guides for the RIMS BBA '24 batch — 5th Semester.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eef0ef; --card:#ffffff; --ink:#171a1f; --muted:#5c636e; --line:#d5d9db;
+    --rail:#0f1319; --hair:#d9dce0;
+    --common:#3d4149; --common-bg:#e9eaec;
+    --fin:#1f6f54;    --fin-bg:#e2efe9;
+    --mkt:#9c3b5f;    --mkt-bg:#f2e5eb;
+    --hr:#4257a0;     --hr-bg:#e6e9f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  section{scroll-margin-top:64px}
+  a{color:inherit}
+
+  /* ---- track spectrum motif ---- */
+  .spectrum{display:flex;height:4px;width:100%}
+  .spectrum i{flex:1}
+  .spectrum .c{background:var(--common)} .spectrum .f{background:var(--fin)}
+  .spectrum .m{background:var(--mkt)} .spectrum .h{background:var(--hr)}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(238,240,239,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    height:56px;max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .brand{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:700;
+    letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .brand b{color:var(--fin)}
+  .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 10px;
+    border-radius:3px;white-space:nowrap;transition:color .15s,background .15s}
+  .navlinks a:hover{color:var(--ink);background:#e2e4e4}
+
+  /* ---- hero ---- */
+  header.hero{padding:clamp(38px,7vw,72px) 0 clamp(26px,4vw,40px)}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(44px,10vw,104px);
+    line-height:.92;letter-spacing:-.015em;margin:10px 0 4px}
+  h1 em{font-style:italic;font-weight:400}
+  .lede{font-size:clamp(15px,2.3vw,18px);color:#33383f;max-width:56ch;margin-top:14px}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);
+    letter-spacing:.03em;margin-top:16px}
+  .tracks{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px}
+  .tk{display:flex;align-items:center;gap:8px;font-size:13px;color:#33383f}
+  .sw{width:13px;height:13px;border-radius:3px;flex:none}
+  .sw.c{background:var(--common)} .sw.f{background:var(--fin)}
+  .sw.m{background:var(--mkt)} .sw.h{background:var(--hr)}
+
+  /* ---- section headings ---- */
+  .shead{display:flex;align-items:baseline;gap:14px;margin:0 0 20px;
+    padding-top:clamp(40px,6vw,64px)}
+  .snum{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(26px,4.4vw,38px);
+    letter-spacing:-.01em;line-height:1}
+  .ssub{color:var(--muted);font-size:14px;margin:-8px 0 22px;max-width:75ch}
+
+  /* ---- timetable ---- */
+  .ttbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .toggle{display:inline-flex;border:1.5px solid var(--ink);border-radius:3px;overflow:hidden}
+  .toggle button{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;
+    letter-spacing:.06em;padding:8px 16px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+  .toggle button+button{border-left:1.5px solid var(--ink)}
+  .toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .hint{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .day h3{font-family:"Fraunces",serif;font-weight:600;font-size:15px;letter-spacing:.02em;
+    padding:10px 15px;background:var(--rail);color:#f4f5f4;display:flex;justify-content:space-between;align-items:baseline}
+  .day h3 small{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:500;
+    letter-spacing:.12em;color:#9aa2ad;text-transform:uppercase}
+  .slot{display:grid;grid-template-columns:66px 1fr;gap:11px;padding:9px 15px;
+    border-top:1px solid var(--line);align-items:start}
+  .slot:first-of-type{border-top:0}
+  .time{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;color:var(--muted);padding-top:2px}
+  .les{font-size:13.5px}
+  .row1{display:flex;align-items:center;gap:7px;flex-wrap:wrap;line-height:1.4}
+  .row1 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:#fff;padding:2px 6px;border-radius:2px}
+  .row1 .fac{color:var(--muted);font-size:11.5px}
+  .tag.common{background:var(--common)} .tag.fin{background:var(--fin)}
+  .tag.mkt{background:var(--mkt)} .tag.hr{background:var(--hr)}
+  .opt+.opt{margin-top:4px}
+  .sat{padding:16px;text-align:center;color:#33383f;font-size:13.5px}
+
+  /* ---- syllabus ---- */
+  .filter{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .filter button{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;padding:7px 13px;border:1px solid var(--line);background:var(--card);
+    color:var(--muted);border-radius:20px;cursor:pointer;transition:.15s}
+  .filter button:hover{color:var(--ink)}
+  .filter button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .filter button[data-t="fin"][aria-pressed="true"]{background:var(--fin);border-color:var(--fin)}
+  .filter button[data-t="mkt"][aria-pressed="true"]{background:var(--mkt);border-color:var(--mkt)}
+  .filter button[data-t="hr"][aria-pressed="true"]{background:var(--hr);border-color:var(--hr)}
+  .filter button[data-t="common"][aria-pressed="true"]{background:var(--common);border-color:var(--common)}
+
+  .course{background:var(--card);border:1px solid var(--line);border-radius:5px;
+    margin-bottom:10px;overflow:hidden;border-left:4px solid var(--common)}
+  .course[data-track="fin"]{border-left-color:var(--fin)}
+  .course[data-track="mkt"]{border-left-color:var(--mkt)}
+  .course[data-track="hr"]{border-left-color:var(--hr)}
+  .course[data-track="common"]{border-left-color:var(--common)}
+  .course.hide{display:none}
+  .course>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;
+    align-items:center;gap:12px;flex-wrap:wrap}
+  .course>summary::-webkit-details-marker{display:none}
+  .course>summary::after{content:"+";margin-left:auto;font-family:"JetBrains Mono",monospace;
+    font-size:18px;color:var(--muted);line-height:1}
+  .course[open]>summary::after{content:"\2013"}
+  .ctag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:2px;flex:none}
+  .ctag.common{background:var(--common)} .ctag.fin{background:var(--fin)}
+  .ctag.mkt{background:var(--mkt)} .ctag.hr{background:var(--hr)}
+  .ccode{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);flex:none}
+  .ctitle{font-family:"Fraunces",serif;font-weight:600;font-size:17px}
+  .ccred{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+  .cbody{padding:2px 16px 18px;border-top:1px solid var(--line);margin-top:2px}
+  .cbody .cdesc{font-size:14px;color:#33383f;margin:14px 0 4px}
+  .cbody h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:16px 0 7px}
+  .units{list-style:none;display:grid;gap:10px}
+  .units li{font-size:13.5px}
+  .units b{font-weight:600;display:block;margin-bottom:2px}
+  .units p{color:#33383f}
+  .cbody ul.pts{margin:0 0 0 18px}
+  .cbody ul.pts li{font-size:13.5px;margin:3px 0}
+  .books{font-size:13px;color:#33383f}
+  .cnote{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:6px}
+
+  /* ---- guides (internship & project) ---- */
+  .guides{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:820px){.guides{grid-template-columns:1fr 1fr}}
+  .guides.one{grid-template-columns:1fr}
+  .guide{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .guide .gh{padding:16px 18px;background:var(--rail);color:#f4f5f4;display:flex;
+    flex-wrap:wrap;align-items:baseline;gap:6px 14px;justify-content:space-between}
+  .guide .gh h3{font-family:"Fraunces",serif;font-weight:600;font-size:20px}
+  .guide .gh p{color:#aeb4bd;font-size:12.5px;margin-top:3px;flex-basis:100%}
+  .guide .gh .chip{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:#c7ccd3;border:1px solid #3a414c;border-radius:3px;padding:3px 8px}
+  .guide .gc{padding:16px 18px}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+  .steps li{position:relative;padding-left:34px;font-size:13.5px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:0;font-family:"JetBrains Mono",monospace;font-size:11px;
+    font-weight:700;color:var(--fin)}
+  .steps li b{font-weight:600}
+  .gc h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+  .gc h4:first-child{margin-top:2px}
+  .check{list-style:none;display:grid;gap:6px}
+  .check li{position:relative;padding-left:22px;font-size:13px;color:#33383f}
+  .check li::before{content:"\2713";position:absolute;left:0;color:var(--fin);font-weight:700}
+  .callout{margin-top:16px;background:var(--common-bg);border-radius:5px;padding:11px 13px;
+    font-size:12.5px;color:#33383f}
+  .specbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .specbar span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;background:var(--card);border:1px solid var(--line);
+    border-radius:3px;padding:5px 10px;color:#33383f}
+  .specbar span b{color:var(--ink);font-weight:700}
+  .skeleton{list-style:none;display:grid;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .skeleton li{padding:9px 13px;font-size:13px;color:#33383f;border-top:1px solid var(--line);background:var(--card)}
+  .skeleton li:first-child{border-top:0}
+  .skeleton li b{font-weight:600;color:var(--ink)}
+  .skeleton li .mono{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-right:8px}
+  .skeleton li ul{margin:5px 0 2px 18px}
+  .skeleton li ul li{border:0;padding:2px 0;font-size:12.5px;background:transparent}
+  .fmt{width:100%;border-collapse:collapse;font-size:13px}
+  .fmt td{border-top:1px solid var(--line);padding:8px 10px 8px 0;vertical-align:top;color:#33383f}
+  .fmt tr:first-child td{border-top:0}
+  .fmt td:first-child{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-right:16px}
+
+  /* ---- footer ---- */
+  footer{margin-top:clamp(48px,7vw,80px);border-top:1px solid var(--line);
+    background:var(--rail);color:#c7ccd3}
+  .footin{max-width:1020px;margin:0 auto;padding:26px clamp(16px,4vw,32px) 30px;
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
+  .footin .fbrand{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:#fff}
+  .footin p{font-size:11.5px;line-height:1.7;color:#9aa2ad;max-width:60ch}
+  .footin a{color:#c7ccd3}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+</style>
+</head>
+<body>
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html" style="text-decoration:none">RIMS <b>BBA</b> '24 / 5th sem</a>
+    <div class="navlinks"><a href="#timetable" class="on">Timetable</a><a href="syllabus.html">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html">Project</a></div>
+  </div>
+  <div class="spectrum"><i class="c"></i><i class="f"></i><i class="m"></i><i class="h"></i></div>
+</nav>
+<div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference — always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Rourkela Institute of Management Studies</div>
+    <h1>BBA <em>Fifth</em><br>Semester</h1>
+    <p class="lede">The batch hub for <b>RIMS BBA '24</b> — the weekly timetable below, plus the complete unit-wise syllabus, the internship report guide and the semester project guide.</p>
+    <div class="meta">Odd Semester · Session 2026–27 · Sections A &amp; B · w.e.f. 17 July 2026</div>
+    <div class="tracks">
+      <span class="tk"><span class="sw c"></span> Common core — everyone</span>
+      <span class="tk"><span class="sw f"></span> Finance</span>
+      <span class="tk"><span class="sw m"></span> Marketing</span>
+      <span class="tk"><span class="sw h"></span> HR</span>
+    </div>
+  </div>
+</header>
+<section id="timetable">
+  <div class="wrap">
+    <div class="shead"><span class="snum">01</span><h2>Timetable</h2></div>
+    <p class="ssub">Two common papers (SM · LSCM) run in parallel and swap between sections — in the common slots, follow the row tagged with <b>your</b> section (A or B). The three specialisation slots list all tracks; attend only yours. Use the toggles to narrow the grid to your section and your track — the default shows everything.</p>
+    <div class="ttbar2">
+      <div class="ttgroup">
+        <span class="hint">Section</span>
+        <div class="toggle" role="group" aria-label="Filter by section">
+          <button data-sec="" aria-pressed="true" onclick="setSec('')">Both</button>
+          <button data-sec="A" aria-pressed="false" onclick="setSec('A')">Sec A</button>
+          <button data-sec="B" aria-pressed="false" onclick="setSec('B')">Sec B</button>
+        </div>
+      </div>
+      <div class="ttgroup">
+        <span class="hint">Specialisation</span>
+        <div class="filter" id="ttfilter" style="margin:0">
+          <button data-t="all" aria-pressed="true" onclick="setTrack('all')">All</button>
+          <button data-t="fin" aria-pressed="false" onclick="setTrack('fin')">Finance</button>
+          <button data-t="mkt" aria-pressed="false" onclick="setTrack('mkt')">Marketing</button>
+          <button data-t="hr" aria-pressed="false" onclick="setTrack('hr')">HR</button>
+        </div>
+      </div>
+    </div>
+    <div class="grid" id="ttgrid">
+<div class="day"><h3>Monday<small>Library: Thu</small></h3><div class="slot"><div class="time">2:30<br>3:30</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>B&amp;I</b> <span class="fac">S. Mondal</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>CB</b> <span class="fac">Guest Faculty</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>TBO</b> <span class="fac">G. Kurup</span></div></div></div><div class="slot"><div class="time">3:30<br>4:30</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>SM</b> <span class="fac">S. Panda</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div></div></div><div class="slot"><div class="time">4:30<br>5:30</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>FMPS</b> <span class="fac">A. Shruti</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>MS</b> <span class="fac">S.K. Biswal</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>C&amp;M</b> <span class="fac">S. Panda</span></div></div></div></div>
+<div class="day"><h3>Tuesday<small>Library: Tue</small></h3><div class="slot"><div class="time">9:00<br>10:00</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>B&amp;I</b> <span class="fac">S. Mondal</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>CB</b> <span class="fac">Guest Faculty</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>TBO</b> <span class="fac">G. Kurup</span></div></div></div><div class="slot"><div class="time">10:00<br>11:00</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>FMPS</b> <span class="fac">A. Shruti</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>MS</b> <span class="fac">S.K. Biswal</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>C&amp;M</b> <span class="fac">S. Panda</span></div></div></div><div class="slot"><div class="time">11:15<br>12:15</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>SM</b> <span class="fac">M. Nayak</span></div></div></div><div class="slot"><div class="time">12:15<br>1:15</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>SM</b> <span class="fac">S. Panda</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div></div></div></div>
+<div class="day"><h3>Wednesday<small>&nbsp;</small></h3><div class="slot"><div class="time">10:00<br>11:00</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>SM</b> <span class="fac">M. Nayak</span></div></div></div><div class="slot"><div class="time">11:15<br>12:15</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>FMPS</b> <span class="fac">A. Shruti</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>MS</b> <span class="fac">S.K. Biswal</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>C&amp;M</b> <span class="fac">S. Panda</span></div></div></div><div class="slot"><div class="time">12:15<br>1:15</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>SM</b> <span class="fac">S. Panda</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div></div></div></div>
+<div class="day"><h3>Thursday<small>&nbsp;</small></h3><div class="slot"><div class="time">2:30<br>3:30</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>SM</b> <span class="fac">M. Nayak</span></div></div></div><div class="slot"><div class="time">3:30<br>4:30</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>B&amp;I</b> <span class="fac">S. Mondal</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>CB</b> <span class="fac">Guest Faculty</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>TBO</b> <span class="fac">G. Kurup</span></div></div></div><div class="slot"><div class="time">4:30<br>5:30</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>SM</b> <span class="fac">S. Panda</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div></div></div></div>
+<div class="day"><h3>Friday<small>Library: Fri</small></h3><div class="slot"><div class="time">9:00<br>10:00</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>B&amp;I</b> <span class="fac">S. Mondal</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>CB</b> <span class="fac">Guest Faculty</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>TBO</b> <span class="fac">G. Kurup</span></div></div></div><div class="slot"><div class="time">10:00<br>11:00</div><div class="les"><div class="row1 crow" data-sec="A"><span class="tag common">A</span> <b>LSCM</b> <span class="fac">TJ / GF</span></div><div class="row1 crow" data-sec="B" style="margin-top:3px"><span class="tag common">B</span> <b>SM</b> <span class="fac">M. Nayak</span></div></div></div><div class="slot"><div class="time">11:15<br>12:15</div><div class="les"><div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>FMPS</b> <span class="fac">A. Shruti</span></div><div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>MS</b> <span class="fac">S.K. Biswal</span></div><div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>C&amp;M</b> <span class="fac">S. Panda</span></div></div></div></div>
+<div class="day"><h3>Saturday<small>&nbsp;</small></h3><div class="sat">HRD block · Seminar (SS — Swati Singh)<br>Mentor–Mentee Interaction</div></div>
+    </div>
+    <p class="cnote" style="margin-top:14px">From Master_TT, Odd Semester 2026–27, w.e.f. 17 July 2026. Timetables get revised mid-semester — always cross-check the latest version on the department notice board before planning your week.</p>
+  </div>
+</section>
+<script>
+(function(){
+  var grid=document.getElementById('ttgrid');
+  if(!grid) return;
+  function press(scope,attr,val){
+    scope.querySelectorAll('button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute(attr)===val);
+    });
+  }
+  window.setSec=function(v){
+    if(v) grid.setAttribute('data-sec',v); else grid.removeAttribute('data-sec');
+    press(document.querySelector('.ttbar2 .toggle'),'data-sec',v);
+  };
+  window.setTrack=function(v){
+    if(v==='all') grid.removeAttribute('data-track'); else grid.setAttribute('data-track',v);
+    press(document.getElementById('ttfilter'),'data-t',v);
+  };
+})();
+</script>
+
+<section>
+  <div class="wrap">
+    <div class="shead" style="padding-top:clamp(32px,5vw,52px)"><span class="snum">02–04</span><h2>Everything else</h2></div>
+    <div class="pagecards">
+      <a class="pagecard" href="syllabus.html">
+        <span class="pnum">02</span>
+        <h3>Syllabus</h3>
+        <p>All eight papers in full — objectives, complete unit-wise contents, core texts, cases and outcomes from the AICTE BBA (NEP-2020) curriculum.</p>
+        <span class="go">Open syllabus →</span>
+      </a>
+      <a class="pagecard" href="internship.html">
+        <span class="pnum">03</span>
+        <h3>Internship Report &amp; Viva</h3>
+        <p>The internship is done — here is the exact report structure, the submission process and how the viva voce is evaluated (SEC-702).</p>
+        <span class="go">Open internship guide →</span>
+      </a>
+      <a class="pagecard" href="project.html">
+        <span class="pnum">04</span>
+        <h3>Semester Project</h3>
+        <p>Proposal to final viva — timeline, title rules, the full chapter-by-chapter report skeleton and the official formatting guidelines.</p>
+        <span class="go">Open project guide →</span>
+      </a>
+    </div>
+    <p class="cnote" style="margin-top:18px">Every page here is an unofficial student compilation — verify all of it at official sources: the department notice board, your faculty, and official AICTE / Sambalpur University documents.</p>
+  </div>
+</section>
+<footer>
+  <div class="footin">
+    <div>
+      <div class="fbrand">RIMS BBA '24 · 5th Semester</div>
+      <p style="margin-top:8px">Unofficial batch resource for our own reference. Always verify every detail against official sources — the department notice board, your faculty, and official AICTE / Sambalpur University documents.</p>
+    </div>
+    <p>Timetable from Master_TT, Odd 2026-27 (w.e.f. 17 July 2026). Syllabus, internship (SEC-702) and major-project guidelines from the AICTE Model Curriculum for UG Degree in BBA (NEP-2020) — Semester V. Rourkela Institute of Management Studies, Sambalpur University.</p>
+  </div>
+</footer>
+</body>
+</html>

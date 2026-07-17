@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semester Project · BBA 5th Sem · RIMS BBA '24</title>
+<meta name="description" content="Semester project guide for BBA 5th Semester — proposal, defence, report skeleton and formatting per AICTE guidelines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eef0ef; --card:#ffffff; --ink:#171a1f; --muted:#5c636e; --line:#d5d9db;
+    --rail:#0f1319; --hair:#d9dce0;
+    --common:#3d4149; --common-bg:#e9eaec;
+    --fin:#1f6f54;    --fin-bg:#e2efe9;
+    --mkt:#9c3b5f;    --mkt-bg:#f2e5eb;
+    --hr:#4257a0;     --hr-bg:#e6e9f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  section{scroll-margin-top:64px}
+  a{color:inherit}
+
+  /* ---- track spectrum motif ---- */
+  .spectrum{display:flex;height:4px;width:100%}
+  .spectrum i{flex:1}
+  .spectrum .c{background:var(--common)} .spectrum .f{background:var(--fin)}
+  .spectrum .m{background:var(--mkt)} .spectrum .h{background:var(--hr)}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(238,240,239,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    height:56px;max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .brand{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:700;
+    letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .brand b{color:var(--fin)}
+  .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 10px;
+    border-radius:3px;white-space:nowrap;transition:color .15s,background .15s}
+  .navlinks a:hover{color:var(--ink);background:#e2e4e4}
+
+  /* ---- hero ---- */
+  header.hero{padding:clamp(38px,7vw,72px) 0 clamp(26px,4vw,40px)}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(44px,10vw,104px);
+    line-height:.92;letter-spacing:-.015em;margin:10px 0 4px}
+  h1 em{font-style:italic;font-weight:400}
+  .lede{font-size:clamp(15px,2.3vw,18px);color:#33383f;max-width:56ch;margin-top:14px}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);
+    letter-spacing:.03em;margin-top:16px}
+  .tracks{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px}
+  .tk{display:flex;align-items:center;gap:8px;font-size:13px;color:#33383f}
+  .sw{width:13px;height:13px;border-radius:3px;flex:none}
+  .sw.c{background:var(--common)} .sw.f{background:var(--fin)}
+  .sw.m{background:var(--mkt)} .sw.h{background:var(--hr)}
+
+  /* ---- section headings ---- */
+  .shead{display:flex;align-items:baseline;gap:14px;margin:0 0 20px;
+    padding-top:clamp(40px,6vw,64px)}
+  .snum{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(26px,4.4vw,38px);
+    letter-spacing:-.01em;line-height:1}
+  .ssub{color:var(--muted);font-size:14px;margin:-8px 0 22px;max-width:75ch}
+
+  /* ---- timetable ---- */
+  .ttbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .toggle{display:inline-flex;border:1.5px solid var(--ink);border-radius:3px;overflow:hidden}
+  .toggle button{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;
+    letter-spacing:.06em;padding:8px 16px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+  .toggle button+button{border-left:1.5px solid var(--ink)}
+  .toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .hint{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .day h3{font-family:"Fraunces",serif;font-weight:600;font-size:15px;letter-spacing:.02em;
+    padding:10px 15px;background:var(--rail);color:#f4f5f4;display:flex;justify-content:space-between;align-items:baseline}
+  .day h3 small{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:500;
+    letter-spacing:.12em;color:#9aa2ad;text-transform:uppercase}
+  .slot{display:grid;grid-template-columns:66px 1fr;gap:11px;padding:9px 15px;
+    border-top:1px solid var(--line);align-items:start}
+  .slot:first-of-type{border-top:0}
+  .time{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;color:var(--muted);padding-top:2px}
+  .les{font-size:13.5px}
+  .row1{display:flex;align-items:center;gap:7px;flex-wrap:wrap;line-height:1.4}
+  .row1 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:#fff;padding:2px 6px;border-radius:2px}
+  .row1 .fac{color:var(--muted);font-size:11.5px}
+  .tag.common{background:var(--common)} .tag.fin{background:var(--fin)}
+  .tag.mkt{background:var(--mkt)} .tag.hr{background:var(--hr)}
+  .opt+.opt{margin-top:4px}
+  .sat{padding:16px;text-align:center;color:#33383f;font-size:13.5px}
+
+  /* ---- syllabus ---- */
+  .filter{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .filter button{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;padding:7px 13px;border:1px solid var(--line);background:var(--card);
+    color:var(--muted);border-radius:20px;cursor:pointer;transition:.15s}
+  .filter button:hover{color:var(--ink)}
+  .filter button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .filter button[data-t="fin"][aria-pressed="true"]{background:var(--fin);border-color:var(--fin)}
+  .filter button[data-t="mkt"][aria-pressed="true"]{background:var(--mkt);border-color:var(--mkt)}
+  .filter button[data-t="hr"][aria-pressed="true"]{background:var(--hr);border-color:var(--hr)}
+  .filter button[data-t="common"][aria-pressed="true"]{background:var(--common);border-color:var(--common)}
+
+  .course{background:var(--card);border:1px solid var(--line);border-radius:5px;
+    margin-bottom:10px;overflow:hidden;border-left:4px solid var(--common)}
+  .course[data-track="fin"]{border-left-color:var(--fin)}
+  .course[data-track="mkt"]{border-left-color:var(--mkt)}
+  .course[data-track="hr"]{border-left-color:var(--hr)}
+  .course[data-track="common"]{border-left-color:var(--common)}
+  .course.hide{display:none}
+  .course>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;
+    align-items:center;gap:12px;flex-wrap:wrap}
+  .course>summary::-webkit-details-marker{display:none}
+  .course>summary::after{content:"+";margin-left:auto;font-family:"JetBrains Mono",monospace;
+    font-size:18px;color:var(--muted);line-height:1}
+  .course[open]>summary::after{content:"\2013"}
+  .ctag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:2px;flex:none}
+  .ctag.common{background:var(--common)} .ctag.fin{background:var(--fin)}
+  .ctag.mkt{background:var(--mkt)} .ctag.hr{background:var(--hr)}
+  .ccode{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);flex:none}
+  .ctitle{font-family:"Fraunces",serif;font-weight:600;font-size:17px}
+  .ccred{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+  .cbody{padding:2px 16px 18px;border-top:1px solid var(--line);margin-top:2px}
+  .cbody .cdesc{font-size:14px;color:#33383f;margin:14px 0 4px}
+  .cbody h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:16px 0 7px}
+  .units{list-style:none;display:grid;gap:10px}
+  .units li{font-size:13.5px}
+  .units b{font-weight:600;display:block;margin-bottom:2px}
+  .units p{color:#33383f}
+  .cbody ul.pts{margin:0 0 0 18px}
+  .cbody ul.pts li{font-size:13.5px;margin:3px 0}
+  .books{font-size:13px;color:#33383f}
+  .cnote{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:6px}
+
+  /* ---- guides (internship & project) ---- */
+  .guides{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:820px){.guides{grid-template-columns:1fr 1fr}}
+  .guides.one{grid-template-columns:1fr}
+  .guide{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .guide .gh{padding:16px 18px;background:var(--rail);color:#f4f5f4;display:flex;
+    flex-wrap:wrap;align-items:baseline;gap:6px 14px;justify-content:space-between}
+  .guide .gh h3{font-family:"Fraunces",serif;font-weight:600;font-size:20px}
+  .guide .gh p{color:#aeb4bd;font-size:12.5px;margin-top:3px;flex-basis:100%}
+  .guide .gh .chip{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:#c7ccd3;border:1px solid #3a414c;border-radius:3px;padding:3px 8px}
+  .guide .gc{padding:16px 18px}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+  .steps li{position:relative;padding-left:34px;font-size:13.5px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:0;font-family:"JetBrains Mono",monospace;font-size:11px;
+    font-weight:700;color:var(--fin)}
+  .steps li b{font-weight:600}
+  .gc h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+  .gc h4:first-child{margin-top:2px}
+  .check{list-style:none;display:grid;gap:6px}
+  .check li{position:relative;padding-left:22px;font-size:13px;color:#33383f}
+  .check li::before{content:"\2713";position:absolute;left:0;color:var(--fin);font-weight:700}
+  .callout{margin-top:16px;background:var(--common-bg);border-radius:5px;padding:11px 13px;
+    font-size:12.5px;color:#33383f}
+  .specbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .specbar span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;background:var(--card);border:1px solid var(--line);
+    border-radius:3px;padding:5px 10px;color:#33383f}
+  .specbar span b{color:var(--ink);font-weight:700}
+  .skeleton{list-style:none;display:grid;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .skeleton li{padding:9px 13px;font-size:13px;color:#33383f;border-top:1px solid var(--line);background:var(--card)}
+  .skeleton li:first-child{border-top:0}
+  .skeleton li b{font-weight:600;color:var(--ink)}
+  .skeleton li .mono{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-right:8px}
+  .skeleton li ul{margin:5px 0 2px 18px}
+  .skeleton li ul li{border:0;padding:2px 0;font-size:12.5px;background:transparent}
+  .fmt{width:100%;border-collapse:collapse;font-size:13px}
+  .fmt td{border-top:1px solid var(--line);padding:8px 10px 8px 0;vertical-align:top;color:#33383f}
+  .fmt tr:first-child td{border-top:0}
+  .fmt td:first-child{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-right:16px}
+
+  /* ---- footer ---- */
+  footer{margin-top:clamp(48px,7vw,80px);border-top:1px solid var(--line);
+    background:var(--rail);color:#c7ccd3}
+  .footin{max-width:1020px;margin:0 auto;padding:26px clamp(16px,4vw,32px) 30px;
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
+  .footin .fbrand{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:#fff}
+  .footin p{font-size:11.5px;line-height:1.7;color:#9aa2ad;max-width:60ch}
+  .footin a{color:#c7ccd3}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+</style>
+</head>
+<body>
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html" style="text-decoration:none">RIMS <b>BBA</b> '24 / 5th sem</a>
+    <div class="navlinks"><a href="index.html#timetable">Timetable</a><a href="syllabus.html">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html" class="on">Project</a></div>
+  </div>
+  <div class="spectrum"><i class="c"></i><i class="f"></i><i class="m"></i><i class="h"></i></div>
+</nav>
+<div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference — always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
+<section id="project">
+  <div class="wrap">
+    <div class="shead"><span class="snum">04</span><h2>Semester Project</h2></div>
+    <p class="ssub">The independent research project runs across Semesters V–VI: proposal and defence this semester, full report and final viva before the Semester VI exams. Everything below — timeline, title rules, report skeleton and formatting — follows the AICTE major-project guidelines.</p>
+    <div class="specbar">
+      <span>Proposal = <b>Chapters 1–3</b></span>
+      <span>Proposal due <b>≥2 weeks before Sem V exams</b></span>
+      <span>Final report <b>≥2 weeks before Sem VI exams</b></span>
+      <span>Defence + <b>viva voce</b>, marks compiled together</span>
+    </div>
+
+    <div class="guides">
+      <div class="guide">
+        <div class="gh">
+          <h3>Timeline &amp; process</h3>
+          <p>From topic to final viva — the official sequence.</p>
+        </div>
+        <div class="gc">
+          <ol class="steps">
+            <li><b>Pick a topic, get a supervisor.</b> You work under a project supervisor appointed by the institute. The proposal is submitted right after the research-methods unit — i.e. this semester.</li>
+            <li><b>Write the proposal (Chapters 1–3).</b> Introduction, literature review and research methodology. Your supervisor <b>must approve the title</b> before you proceed, and the research committee ratifies all topics.</li>
+            <li><b>Submit two copies.</b> At least two copies of the proposal go to the Project Coordinator <b>no later than two weeks before the Semester V final examination</b>.</li>
+            <li><b>Defend the proposal.</b> You present before panels formed by the project coordinator on a set day and are awarded marks. You'll receive corrections — work them in and get supervisor sign-off to continue.</li>
+            <li><b>Complete Chapters 4 &amp; 5.</b> Collect and analyse data, then write the findings and the summary/conclusions/recommendations chapters.</li>
+            <li><b>Final submission &amp; viva voce.</b> Once the supervisor approves the finished project, it goes to the project coordinator, who arranges the final defence and VIVA VOCE. Those marks are added to your proposal-defence marks. Submit <b>two bound copies</b> to the institute at least two weeks before the Semester VI final exam. (If unsuccessful, resubmission rules from the academic policy apply.)</li>
+          </ol>
+          <h4>Choosing a title — the rules</h4>
+          <ul class="check">
+            <li>Clear and specific to a <b>real problem</b></li>
+            <li>New and original — not a replica of anyone else's work</li>
+            <li>Similar topics between students are avoided</li>
+            <li>Supervisor approval at proposal level is mandatory</li>
+            <li>The research committee must ratify every topic</li>
+          </ul>
+          <h4>Formatting guidelines</h4>
+          <table class="fmt">
+            <tr><td>Font</td><td>Times New Roman · 12 pt body · 14 pt for topics &amp; titles</td></tr>
+            <tr><td>Spacing</td><td>1.5 lines throughout</td></tr>
+            <tr><td>Headings</td><td>Topics and subtopics <b>bolded</b>, never underlined</td></tr>
+            <tr><td>Margins</td><td>1&Prime; top, bottom &amp; right · 1.25&Prime; left (for binding)</td></tr>
+            <tr><td>Tables</td><td>Large tables may drop to 10–11 pt to keep margins; every table/figure needs a number, heading and a finding-and-analysis line ("Table 4.1 shows that…", never "the table below")</td></tr>
+            <tr><td>Numbers</td><td>Sentences must not begin with a numeral or percentage</td></tr>
+            <tr><td>Pagination</td><td>Bottom of page, centred; main document starts at page 1 in Chapter One (front matter in Roman numerals)</td></tr>
+            <tr><td>References</td><td>APA style, throughout</td></tr>
+            <tr><td>Binding</td><td>Hard copy, <b>blue</b>, preferably hardcover book binding</td></tr>
+          </table>
+          <div class="callout">Evaluation is based on the completed project, the proposal presentation, and the viva voce. Plagiarism is the fastest way to sink it — the critical-review section exists precisely to prove your gap is real and your work original.</div>
+        </div>
+      </div>
+
+      <div class="guide">
+        <div class="gh">
+          <h3>Report skeleton</h3>
+          <p>Every element, in order — front matter through appendices.</p>
+        </div>
+        <div class="gc">
+          <ol class="skeleton">
+            <li><span class="mono">i</span><b>Title page</b> — topic in upper case, centred, 14 pt; your name, class &amp; year; supervisor's name &amp; designation; "Research Project Submitted in Partial Fulfilment for the Degree of Bachelor in Business Administration"; month &amp; year</li>
+            <li><span class="mono">ii</span><b>Declaration</b> — signed by you ("This project is my original work and has not been presented for a degree in any other university or for any other award") and by the supervisor confirming the work was done under their supervision</li>
+            <li><span class="mono">iii</span><b>Dedication</b> — optional, ≤25 words, own page</li>
+            <li><span class="mono">iv</span><b>Acknowledgement</b> — ~150 words; credit for guidance and help during the study</li>
+            <li><span class="mono">v</span><b>Abstract</b> — ≤300 words, one single-spaced paragraph on one page: purpose &amp; objectives · significance · methodology · findings · recommendations</li>
+            <li><span class="mono">vi+</span><b>Table of contents · List of tables · List of figures</b> — all tables/figures numbered, headed, APA style</li>
+            <li><span class="mono">Ch 1</span><b>Introduction</b>
+              <ul>
+                <li>1.1 Introduction — overview of chapter contents</li>
+                <li>1.2 Background of the study (specifics, citations, build the case)</li>
+                <li>1.3 Problem statement — a paragraph that shows clearly what the problem is and what the research solves, with authoritative sources on what's been done and what's missing</li>
+                <li>1.4 Objectives — general goal + specific objectives that are SMART and within scope</li>
+                <li>1.5 Research questions — same count as objectives; never yes/no framing</li>
+                <li>1.6 Significance — who benefits and how</li>
+                <li>1.7 Scope — concept, content, geographical and time scope</li>
+                <li>1.8 Organisation of the study, chapter by chapter</li>
+              </ul></li>
+            <li><span class="mono">Ch 2</span><b>Literature review</b>
+              <ul>
+                <li>2.1 Introduction · 2.2 Theoretical literature — concepts, definitions and theories your study uses</li>
+                <li>2.3 Similar projects — discuss at least five similar works (global and local), APA-cited</li>
+                <li>2.4 Critical review &amp; research-gap identification — the unique innovation of your project; without a clear gap it reads as plagiarised</li>
+                <li>2.5 Summary of the critical issues raised</li>
+              </ul></li>
+            <li><span class="mono">Ch 3</span><b>Research methodology</b> — research design; population and sample (random / stratified / purposive sampling); data types and tools of collection (questionnaire, schedule, interview, observation); data organisation and analysis plan (tabulation, SPSS/Excel, central tendency, correlation, chi-square, t-test as applicable)</li>
+            <li><span class="mono">Ch 4</span><b>Data analysis, presentation &amp; interpretation</b> — findings organised objective by objective; each table/figure followed by its finding and analysis; check every objective is addressed</li>
+            <li><span class="mono">Ch 5</span><b>Summary, conclusions &amp; recommendations</b>
+              <ul>
+                <li>5.1 Introduction · 5.2 Summary of findings by objective</li>
+                <li>5.3 Conclusions — direct answers to the project objectives</li>
+                <li>5.4 Recommendations — in line with the study area and conclusions</li>
+                <li>5.5 Suggestions for further study</li>
+              </ul></li>
+            <li><span class="mono">6.0</span><b>References</b> — APA style, everything cited</li>
+            <li><span class="mono">7.0</span><b>Appendices</b> — A: questionnaire · B: response summary sheet · C: other evidence such as pictures</li>
+          </ol>
+          <div class="callout">Tie the topic to your specialisation — a bank/NBFC or markets study for Finance, a brand, service or consumer study for Marketing, a people/teams/talent study for HR — and, wherever you can, grow it out of the business problem you saw at your internship. You already have the access, the context and half the data. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD. Deadlines, copies and formats here follow the AICTE model guidelines — verify RIMS’ actual dates and requirements with your guide, the project coordinator and the HOD.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footin">
+    <div>
+      <div class="fbrand">RIMS BBA '24 · 5th Semester</div>
+      <p style="margin-top:8px">Unofficial batch resource for our own reference. Always verify every detail against official sources — the department notice board, your faculty, and official AICTE / Sambalpur University documents.</p>
+    </div>
+    <p>Timetable from Master_TT, Odd 2026-27 (w.e.f. 17 July 2026). Syllabus, internship (SEC-702) and major-project guidelines from the AICTE Model Curriculum for UG Degree in BBA (NEP-2020) — Semester V. Rourkela Institute of Management Studies, Sambalpur University.</p>
+  </div>
+</footer>
+</body>
+</html>

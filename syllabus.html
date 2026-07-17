@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syllabus · BBA 5th Sem · RIMS BBA '24</title>
+<meta name="description" content="Complete unit-wise syllabus for all eight BBA 5th Semester papers — AICTE NEP-2020 curriculum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eef0ef; --card:#ffffff; --ink:#171a1f; --muted:#5c636e; --line:#d5d9db;
+    --rail:#0f1319; --hair:#d9dce0;
+    --common:#3d4149; --common-bg:#e9eaec;
+    --fin:#1f6f54;    --fin-bg:#e2efe9;
+    --mkt:#9c3b5f;    --mkt-bg:#f2e5eb;
+    --hr:#4257a0;     --hr-bg:#e6e9f4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  section{scroll-margin-top:64px}
+  a{color:inherit}
+
+  /* ---- track spectrum motif ---- */
+  .spectrum{display:flex;height:4px;width:100%}
+  .spectrum i{flex:1}
+  .spectrum .c{background:var(--common)} .spectrum .f{background:var(--fin)}
+  .spectrum .m{background:var(--mkt)} .spectrum .h{background:var(--hr)}
+
+  /* ---- nav ---- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(238,240,239,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navin{display:flex;align-items:center;justify-content:space-between;gap:16px;
+    height:56px;max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .brand{font-family:"JetBrains Mono",monospace;font-size:12.5px;font-weight:700;
+    letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .brand b{color:var(--fin)}
+  .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+  .navlinks::-webkit-scrollbar{display:none}
+  .navlinks a{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;padding:7px 10px;
+    border-radius:3px;white-space:nowrap;transition:color .15s,background .15s}
+  .navlinks a:hover{color:var(--ink);background:#e2e4e4}
+
+  /* ---- hero ---- */
+  header.hero{padding:clamp(38px,7vw,72px) 0 clamp(26px,4vw,40px)}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(44px,10vw,104px);
+    line-height:.92;letter-spacing:-.015em;margin:10px 0 4px}
+  h1 em{font-style:italic;font-weight:400}
+  .lede{font-size:clamp(15px,2.3vw,18px);color:#33383f;max-width:56ch;margin-top:14px}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--muted);
+    letter-spacing:.03em;margin-top:16px}
+  .tracks{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px}
+  .tk{display:flex;align-items:center;gap:8px;font-size:13px;color:#33383f}
+  .sw{width:13px;height:13px;border-radius:3px;flex:none}
+  .sw.c{background:var(--common)} .sw.f{background:var(--fin)}
+  .sw.m{background:var(--mkt)} .sw.h{background:var(--hr)}
+
+  /* ---- section headings ---- */
+  .shead{display:flex;align-items:baseline;gap:14px;margin:0 0 20px;
+    padding-top:clamp(40px,6vw,64px)}
+  .snum{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+  h2{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(26px,4.4vw,38px);
+    letter-spacing:-.01em;line-height:1}
+  .ssub{color:var(--muted);font-size:14px;margin:-8px 0 22px;max-width:75ch}
+
+  /* ---- timetable ---- */
+  .ttbar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .toggle{display:inline-flex;border:1.5px solid var(--ink);border-radius:3px;overflow:hidden}
+  .toggle button{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;
+    letter-spacing:.06em;padding:8px 16px;background:transparent;color:var(--ink);border:0;cursor:pointer}
+  .toggle button+button{border-left:1.5px solid var(--ink)}
+  .toggle button[aria-pressed="true"]{background:var(--ink);color:#fff}
+  .hint{font-family:"JetBrains Mono",monospace;font-size:11px;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .day h3{font-family:"Fraunces",serif;font-weight:600;font-size:15px;letter-spacing:.02em;
+    padding:10px 15px;background:var(--rail);color:#f4f5f4;display:flex;justify-content:space-between;align-items:baseline}
+  .day h3 small{font-family:"JetBrains Mono",monospace;font-size:9.5px;font-weight:500;
+    letter-spacing:.12em;color:#9aa2ad;text-transform:uppercase}
+  .slot{display:grid;grid-template-columns:66px 1fr;gap:11px;padding:9px 15px;
+    border-top:1px solid var(--line);align-items:start}
+  .slot:first-of-type{border-top:0}
+  .time{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;color:var(--muted);padding-top:2px}
+  .les{font-size:13.5px}
+  .row1{display:flex;align-items:center;gap:7px;flex-wrap:wrap;line-height:1.4}
+  .row1 .tag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:#fff;padding:2px 6px;border-radius:2px}
+  .row1 .fac{color:var(--muted);font-size:11.5px}
+  .tag.common{background:var(--common)} .tag.fin{background:var(--fin)}
+  .tag.mkt{background:var(--mkt)} .tag.hr{background:var(--hr)}
+  .opt+.opt{margin-top:4px}
+  .sat{padding:16px;text-align:center;color:#33383f;font-size:13.5px}
+
+  /* ---- syllabus ---- */
+  .filter{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .filter button{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;
+    text-transform:uppercase;padding:7px 13px;border:1px solid var(--line);background:var(--card);
+    color:var(--muted);border-radius:20px;cursor:pointer;transition:.15s}
+  .filter button:hover{color:var(--ink)}
+  .filter button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .filter button[data-t="fin"][aria-pressed="true"]{background:var(--fin);border-color:var(--fin)}
+  .filter button[data-t="mkt"][aria-pressed="true"]{background:var(--mkt);border-color:var(--mkt)}
+  .filter button[data-t="hr"][aria-pressed="true"]{background:var(--hr);border-color:var(--hr)}
+  .filter button[data-t="common"][aria-pressed="true"]{background:var(--common);border-color:var(--common)}
+
+  .course{background:var(--card);border:1px solid var(--line);border-radius:5px;
+    margin-bottom:10px;overflow:hidden;border-left:4px solid var(--common)}
+  .course[data-track="fin"]{border-left-color:var(--fin)}
+  .course[data-track="mkt"]{border-left-color:var(--mkt)}
+  .course[data-track="hr"]{border-left-color:var(--hr)}
+  .course[data-track="common"]{border-left-color:var(--common)}
+  .course.hide{display:none}
+  .course>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;
+    align-items:center;gap:12px;flex-wrap:wrap}
+  .course>summary::-webkit-details-marker{display:none}
+  .course>summary::after{content:"+";margin-left:auto;font-family:"JetBrains Mono",monospace;
+    font-size:18px;color:var(--muted);line-height:1}
+  .course[open]>summary::after{content:"\2013"}
+  .ctag{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.07em;
+    text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:2px;flex:none}
+  .ctag.common{background:var(--common)} .ctag.fin{background:var(--fin)}
+  .ctag.mkt{background:var(--mkt)} .ctag.hr{background:var(--hr)}
+  .ccode{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);flex:none}
+  .ctitle{font-family:"Fraunces",serif;font-weight:600;font-size:17px}
+  .ccred{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted)}
+  .cbody{padding:2px 16px 18px;border-top:1px solid var(--line);margin-top:2px}
+  .cbody .cdesc{font-size:14px;color:#33383f;margin:14px 0 4px}
+  .cbody h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:16px 0 7px}
+  .units{list-style:none;display:grid;gap:10px}
+  .units li{font-size:13.5px}
+  .units b{font-weight:600;display:block;margin-bottom:2px}
+  .units p{color:#33383f}
+  .cbody ul.pts{margin:0 0 0 18px}
+  .cbody ul.pts li{font-size:13.5px;margin:3px 0}
+  .books{font-size:13px;color:#33383f}
+  .cnote{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:6px}
+
+  /* ---- guides (internship & project) ---- */
+  .guides{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:820px){.guides{grid-template-columns:1fr 1fr}}
+  .guides.one{grid-template-columns:1fr}
+  .guide{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .guide .gh{padding:16px 18px;background:var(--rail);color:#f4f5f4;display:flex;
+    flex-wrap:wrap;align-items:baseline;gap:6px 14px;justify-content:space-between}
+  .guide .gh h3{font-family:"Fraunces",serif;font-weight:600;font-size:20px}
+  .guide .gh p{color:#aeb4bd;font-size:12.5px;margin-top:3px;flex-basis:100%}
+  .guide .gh .chip{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.08em;
+    text-transform:uppercase;color:#c7ccd3;border:1px solid #3a414c;border-radius:3px;padding:3px 8px}
+  .guide .gc{padding:16px 18px}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+  .steps li{position:relative;padding-left:34px;font-size:13.5px}
+  .steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);
+    position:absolute;left:0;top:0;font-family:"JetBrains Mono",monospace;font-size:11px;
+    font-weight:700;color:var(--fin)}
+  .steps li b{font-weight:600}
+  .gc h4{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+  .gc h4:first-child{margin-top:2px}
+  .check{list-style:none;display:grid;gap:6px}
+  .check li{position:relative;padding-left:22px;font-size:13px;color:#33383f}
+  .check li::before{content:"\2713";position:absolute;left:0;color:var(--fin);font-weight:700}
+  .callout{margin-top:16px;background:var(--common-bg);border-radius:5px;padding:11px 13px;
+    font-size:12.5px;color:#33383f}
+  .specbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .specbar span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;background:var(--card);border:1px solid var(--line);
+    border-radius:3px;padding:5px 10px;color:#33383f}
+  .specbar span b{color:var(--ink);font-weight:700}
+  .skeleton{list-style:none;display:grid;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .skeleton li{padding:9px 13px;font-size:13px;color:#33383f;border-top:1px solid var(--line);background:var(--card)}
+  .skeleton li:first-child{border-top:0}
+  .skeleton li b{font-weight:600;color:var(--ink)}
+  .skeleton li .mono{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-right:8px}
+  .skeleton li ul{margin:5px 0 2px 18px}
+  .skeleton li ul li{border:0;padding:2px 0;font-size:12.5px;background:transparent}
+  .fmt{width:100%;border-collapse:collapse;font-size:13px}
+  .fmt td{border-top:1px solid var(--line);padding:8px 10px 8px 0;vertical-align:top;color:#33383f}
+  .fmt tr:first-child td{border-top:0}
+  .fmt td:first-child{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap;padding-right:16px}
+
+  /* ---- footer ---- */
+  footer{margin-top:clamp(48px,7vw,80px);border-top:1px solid var(--line);
+    background:var(--rail);color:#c7ccd3}
+  .footin{max-width:1020px;margin:0 auto;padding:26px clamp(16px,4vw,32px) 30px;
+    display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
+  .footin .fbrand{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;color:#fff}
+  .footin p{font-size:11.5px;line-height:1.7;color:#9aa2ad;max-width:60ch}
+  .footin a{color:#c7ccd3}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+</style>
+</head>
+<body>
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html" style="text-decoration:none">RIMS <b>BBA</b> '24 / 5th sem</a>
+    <div class="navlinks"><a href="index.html#timetable">Timetable</a><a href="syllabus.html" class="on">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html">Project</a></div>
+  </div>
+  <div class="spectrum"><i class="c"></i><i class="f"></i><i class="m"></i><i class="h"></i></div>
+</nav>
+<div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference — always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
+<section id="syllabus">
+  <div class="wrap">
+    <div class="shead"><span class="snum">02</span><h2>Syllabus</h2></div>
+    <p class="ssub">The eight papers on our timetable, in full — course description, objectives, complete unit-wise contents, core texts, suggested cases and outcomes, straight from the AICTE BBA (NEP-2020) Model Curriculum, Semester V. Tap a paper to open it. Filter to your track:</p>
+    <div class="filter" id="filter">
+      <button data-t="all" aria-pressed="true" onclick="filt('all')">All</button>
+      <button data-t="common" aria-pressed="false" onclick="filt('common')">Common</button>
+      <button data-t="fin" aria-pressed="false" onclick="filt('fin')">Finance</button>
+      <button data-t="mkt" aria-pressed="false" onclick="filt('mkt')">Marketing</button>
+      <button data-t="hr" aria-pressed="false" onclick="filt('hr')">HR</button>
+    </div>
+
+    <!-- ======== COMMON: STRATEGIC MANAGEMENT ======== -->
+    <details class="course" data-track="common">
+      <summary><span class="ctag common">Common</span><span class="ccode">CC501</span><span class="ctitle">Strategic Management</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">How firms build and sustain competitive advantage — thinking like a general manager who must pull accounting, finance, HR, information systems, marketing and operations into one cohesive whole.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Enhance the ability to do the job of a general manager responsible for strategic performance — integrating the different functional areas of business into a cohesive whole</li>
+          <li>Analyse the competitive situation and evaluate the challenges managers face in implementing and evaluating strategies across businesses, industries and cultures</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Introduction to Strategy</b>
+            <p>Strategy — concept, relevance, role and benefits; importance of strategic management; the strategic management process; levels of strategy; approaches to strategic decision-making; strategic intent — vision, mission, goals and objectives; strategy and corporate governance; social responsibility and ethics in strategic management. Also traces how strategic-management thinking has evolved over the decades.</p></li>
+          <li><b>2 · Strategic Analysis</b>
+            <p>Environmental appraisal — scanning the technological, social, cultural, demographic, political and legal environment; components and analysis of the general (external) environment; industry analysis — analysis of the competitive environment; analysis of the internal environment — strategic capability, nature, characteristics, types and approaches; value chain analysis; experience curve; SWOT analysis; BCG Matrix; GE nine-cell Matrix. Goal: judge the value-capturing ability of incumbents and forecast industry profitability from shifts in underlying forces.</p></li>
+          <li><b>3 · Strategy Formulation</b>
+            <p>Business strategy — generic strategies; functional areas and the link between business strategy and functional strategy. Corporate strategy — creating value and diversification; strategic alliances; international expansion strategies (multi-domestic approach, franchising, licensing, joint ventures); strategies of growth, stability and renewal — concentrated growth, product development, integration, diversification; renewal via retrenchment and turnaround; strategic fundamentals of mergers &amp; acquisitions; Blue Ocean strategy.</p></li>
+          <li><b>4 · Strategy Implementation &amp; Control</b>
+            <p>Structural, functional/operational and behavioural implementation; strategy evaluation and control; strategic leadership; strategic control and corporate governance; issues in strategy implementation; creating effective organizational designs; strategy and society; managing innovation and fostering corporate entrepreneurship; integrating functional plans and policies; operational control and an overview of management control — turning internal alignment and temporary opportunities into sustainable advantage.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">Wheelen, Hunger, Hoffman, Bamford &amp; Kansal — <i>Concepts in Strategic Management &amp; Business Policy</i> (15e, Pearson) · Rothaermel — <i>Strategic Management</i> (5e Indian, McGraw Hill). Key readings: Porter — <i>The Five Competitive Forces that Shape Strategy</i> (HBR) · Collis &amp; Montgomery — <i>Competing on Resources</i> · Kim &amp; Mauborgne — <i>Blue Ocean Strategy</i> · Hambrick &amp; Fredrickson — <i>Are You Sure You Have a Strategy?</i> · Porter &amp; Kramer — <i>Competitive Advantage &amp; CSR</i>.</p>
+        <h4>Faculty</h4>
+        <p class="books">S. Panda (Sec A) · M. Nayak (Sec B)</p>
+      </div>
+    </details>
+
+    <!-- ======== COMMON: LSCM ======== -->
+    <details class="course" data-track="common">
+      <summary><span class="ctag common">Common</span><span class="ccode">CC502</span><span class="ctitle">Logistics &amp; Supply Chain Management</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">Managing and optimizing supply chains in modern business — logistics, strategic fit, network design, sourcing, pricing and demand management, with a running emphasis on how digital transformation and e-commerce reshape supply-chain strategy.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Understand the strategic role of supply chain management in enhancing organizational competitiveness</li>
+          <li>Explore the design and optimization of supply chain networks, particularly for e-commerce</li>
+          <li>Examine the impact of sourcing and pricing decisions on supply chain efficiency and effectiveness</li>
+          <li>Develop skills in coordinating and managing supply and demand in a globalized market</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Introduction to Supply Chain Management</b>
+            <p>The role of supply chain management in organizations; achieving strategic fit; supply chain drivers and metrics — how supply chains align business strategy with operational capability to lift performance and competitiveness.</p></li>
+          <li><b>2 · Supply Chain Network Design</b>
+            <p>Designing distribution networks with a focus on e-business applications and global supply chain networks; strategies and challenges of building supply chains that are both efficient and responsive, aligned with business objectives and dynamic global markets.</p></li>
+          <li><b>3 · Sourcing &amp; Pricing Strategies</b>
+            <p>Sourcing decisions and pricing management within supply chains; sourcing strategies and pricing models for revenue management and cost-efficiency, with particular focus on e-commerce dynamics.</p></li>
+          <li><b>4 · Demand &amp; Supply Coordination</b>
+            <p>Synchronizing demand forecasting, aggregate planning, and sales &amp; operations planning; demand-forecasting techniques, aggregate-planning strategies, and coordination across the chain to balance demand and supply efficiently.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">Chopra &amp; Meindl — <i>Supply Chain Management: Strategy, Planning &amp; Operation</i> (7e, Pearson) · Martin Christopher — <i>Logistics &amp; Supply Chain Management</i> (5e, Pearson).</p>
+        <h4>Suggested cases</h4>
+        <ul class="pts">
+          <li>Dell's direct model in PC manufacturing — integrating supply chain and e-business</li>
+          <li>Starbucks' sustainable sourcing practices — a supply chain perspective</li>
+          <li>Walmart's supply chain management strategies for global dominance</li>
+        </ul>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Design and manage effective supply chains that enhance competitiveness</li>
+          <li>Gain practical insight into strategic sourcing, demand planning and coordination</li>
+          <li>Understand how digital transformation affects supply chain strategy and operations</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">TJ* · Guest Faculty <span class="cnote">*TJ isn't listed in the master faculty key.</span></p>
+      </div>
+    </details>
+
+    <!-- ======== FINANCE: BANKING & INSURANCE ======== -->
+    <details class="course" data-track="fin">
+      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin09</span><span class="ctitle">Banking &amp; Insurance</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">A thorough examination of the principles, practices and regulatory structures governing India's banking and insurance sectors — functions, procedures, products and services — preparing you for careers in banking, insurance and financial services.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Develop understanding of the fundamental principles and functioning of banking in India</li>
+          <li>Explain concepts and general principles of insurance in relation to risk and its management</li>
+          <li>Expand knowledge of products, services and the latest technologies used in both sectors</li>
+          <li>Equip yourself with techniques to analyse the financial performance of banks for risk management</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Introduction to Banking &amp; Insurance</b>
+            <p><i>Banking:</i> evolution, structure and development of banking in India — commercial (public, private, foreign), rural and co-operative banks; role of banks in economic development; RBI — objectives, functions and developmental role; fee-based and fund-based products; types of accounts, deposits, advances and collaterals; management of bank assets &amp; liabilities; reading a commercial bank's balance sheet and income statement; CAMEL rating and banking ratios; banking regulations and BASEL norms; capital adequacy — SLR, CRR, CAR; asset–liability management; NPAs — problems and management efforts. <i>Insurance:</i> evolution, structure and development in India; insurance vs assurance; general principles and terminology; risk — meaning, risk vs uncertainty, chances of loss, peril and hazard, classification of risks; risk pooling, insurable risks vs hedging, risk-transfer methods; IRDA — duties, powers and functions; the Banking Regulation (Amendment) Act 2020.</p></li>
+          <li><b>2 · Retail Banking</b>
+            <p>Account-opening process and documentation — KYC and AML; retail products overview (customer requirements and product development); liability and asset products; credit scoring and CIBIL; retail product marketing strategies — tie-ups for personal loans, credit cards, educational loans, auto/vehicle loans and home loans; delivery channels — branch, extension counters, universal banking, ATMs, POS, internet banking, m-banking; customer relationship management and stages of the CRM process; technology for retail banking — static information, account opening, loan origination, transaction information, disbursement and final settlement.</p></li>
+          <li><b>3 · Life Insurance</b>
+            <p>Fundamental principles and basic features of life-insurance contracts; products — traditional vs unit-linked, individual vs group, with and without profit; policy types — term, whole life and variants, endowment and variants, annuities and pension plans; special policies for children, women and the disabled; mortality table; premium types, payment options and calculation — factors affecting premium; assignment, nomination and surrender; policy lapse, revival and paid-up value; application and acceptance procedure; claims — survival benefits, death, maturity, early and non-early claims, documents for early claims; death by unnatural causes; claims-concession clauses; presumption of death; marketing channels and bancassurance.</p></li>
+          <li><b>4 · General Insurance</b>
+            <p>Meaning, evolution and growth; fundamentals of general insurance. Fire insurance — coverage, consequential loss, declaration policies. Marine — cargo and hull policies, institute clauses, open policies. Motor — types, third-party, comprehensive, conditions, exclusions, premium. Health &amp; mediclaim, personal accident, liability, burglary, rural and agricultural covers, engineering and consequential-loss covers, aviation hull &amp; liability, miscellaneous insurances. Underwriting and premium rating — proposal forms, cover notes, certificates, endorsements, premium loading. Claim settlement — procedure, TPAs, claim forms, investigation/assessment, essential documents, settlement limitation, arbitration, loss minimisation and salvage.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">IIBF — <i>Principles &amp; Practices of Banking</i>, <i>Banking Products &amp; Services</i>, <i>Risk Management</i> · Rose &amp; Hudgins — <i>Bank Management &amp; Financial Services</i> · Koch &amp; MacDonald — <i>Bank Management</i> · Trieschmann, Hoyt &amp; Sommer — <i>Risk Management &amp; Insurance</i> · Insurance Institute of India — <i>Principles of Insurance</i>, <i>Practice of Life Insurance</i>, <i>Practice of General Insurance</i>.</p>
+        <h4>Suggested cases</h4>
+        <ul class="pts">
+          <li>The rise and fall of a particular bank · a bank fraud case</li>
+          <li>Merger of associate banks with State Bank of India</li>
+          <li>Digital transformation in banking / insurance</li>
+          <li>Ayushman Bharat and the Indian medical-insurance sector</li>
+        </ul>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Explain how the banking and insurance sectors function and relate to the economy</li>
+          <li>Compare products and services across both sectors</li>
+          <li>Evaluate product pricing, marketing and distribution channels</li>
+          <li>Apply tools for financial-performance analysis and risk management</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">S. Mondal</p>
+      </div>
+    </details>
+
+    <!-- ======== FINANCE: FMPS ======== -->
+    <details class="course" data-track="fin">
+      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin03</span><span class="ctitle">Financial Markets, Products &amp; Services</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">An in-depth look at the structure, functioning and significance of financial markets, the variety of products traded in them, and the services built around them — the knowledge and analytical skill to navigate a complex financial environment.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Understand the role and importance of financial markets in the economy</li>
+          <li>Analyse various financial products and their characteristics</li>
+          <li>Evaluate the role of financial intermediaries and services in the financial system</li>
+          <li>Apply the knowledge to real-world financial decision-making</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Financial System &amp; Markets</b>
+            <p>Financial system — need, structure, functions and scope of financial markets; financial intermediation and intermediaries; fund-based and fee-based products. <i>Money market:</i> instruments — T-bills, commercial papers, certificates of deposit, call money, money-market mutual funds, commercial bills; trading mechanisms. <i>Capital market:</i> primary and secondary markets; methods of floatation — IPOs, book building, private placements, rights and bonus issues; investor protection and recent trends in the primary market; SEBI — objectives, role, functions and powers. Stock exchanges — NSE, BSE; index construction — weighted aggregate value, weighted average of price relatives, free-float methods; brokers and types of market orders; BOLT and NEAT trading systems; T+2 trading cycle and settlement types; pay-in/pay-out, bad delivery, short delivery, auction, demat vs physical settlement; circuit breakers and market makers.</p></li>
+          <li><b>2 · Leasing &amp; Hire Purchase</b>
+            <p>Leasing — definition, types and features; advantages and disadvantages; main clauses in a lease agreement; buy-vs-lease decision — tax and depreciation aspects; lease evaluation from the lessee's and lessor's perspectives; major leasing institutions in India. Hire purchase — concepts and features; evaluation with tax and depreciation implications; choosing between leasing and hire purchase; installment purchase and how it differs from hire purchase.</p></li>
+          <li><b>3 · Mutual Funds, Credit Rating &amp; Securitization</b>
+            <p>Mutual funds — definition and history; types; advantages and disadvantages; establishing a fund — trustee, sponsor, AMC, custodian; entry/exit load; NAV concept and calculation; SIP and SWP; the Indian MF industry and its regulation. Credit rating — definition; rating process for financial instruments; rating methodology, agencies and symbols; advantages and disadvantages.</p></li>
+          <li><b>4 · Factoring, Forfaiting &amp; Bill Discounting</b>
+            <p>Factoring — definition and types: with-recourse and without-recourse, domestic and international; export and import factor; single-factor, direct-export and direct-import factoring systems; fees — finance charge and service fee; pros and cons. Bill discounting — definition, nature, importance, types; bill discounting vs factoring; bill rediscounting. Forfaiting — definition, nature and importance; mechanism of a forfaiting transaction; discount and commitment fees; pros and cons; factoring vs forfaiting. <i>Numericals on leasing, hire purchase, factoring, forfaiting, bill discounting and NAV calculations.</i></p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">M.Y. Khan — <i>Financial Services</i> and <i>Indian Financial System</i> (TMH) · Kohn — <i>Financial Institutions and Markets</i> · Fabozzi &amp; Modigliani — <i>Foundations of Financial Markets &amp; Institutions</i> · Machiraju — <i>Indian Financial Systems</i> · Pathak — <i>Indian Financial System</i> (Pearson).</p>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Define key terms — lease and hire-purchase agreements, factoring, forfaiting, bills of exchange, mutual-fund types, rating agencies</li>
+          <li>Explain how leasing works, the stages of hire purchase and the role of credit-rating agencies</li>
+          <li>Evaluate factoring vs forfaiting for a company's receivables and recommend the right option</li>
+          <li>Analyse the mutual-fund landscape and evaluate performance metrics</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">A. Shruti</p>
+      </div>
+    </details>
+
+    <!-- ======== MARKETING: CONSUMER BEHAVIOUR ======== -->
+    <details class="course" data-track="mkt">
+      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-01</span><span class="ctitle">Consumer Behaviour</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">A comprehensive study of consumer behavioural concepts and models to understand, evaluate and predict consumer behaviour — and translate the complexities of consumer decision-making into effective marketing strategy in the Indian context.</p>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Understanding Consumer Behaviour</b>
+            <p>Introduction to consumer behaviour; consumer behaviour and the marketing concepts; value and the consumer-behaviour framework; online consumer behaviour; organizational buying behaviour; consumerism.</p></li>
+          <li><b>2 · External Influences</b>
+            <p>Lifestyles and psychographics on buying behaviour; social class and group influence — reference-group and family influence on buying behaviour; influence of culture on consumer behaviour.</p></li>
+          <li><b>3 · Internal Influences</b>
+            <p>Consumer perception; consumer learning, memory and involvement; dynamics of consumer motivation; consumer personality; consumer attitudes and attitude change.</p></li>
+          <li><b>4 · Consumer Decision Making</b>
+            <p>Concept of consumer decision; situational influences on decisions; the decision-making process — need recognition and search, alternative evaluation and choice, post-purchase behaviour; models of consumer decision making.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">Schiffman, Kanuk &amp; Kumar — <i>Consumer Behavior</i> (Pearson) · Loudon &amp; Della Bitta — <i>Consumer Behavior: Concepts &amp; Applications</i> · Babin, Harris &amp; Mohan — <i>CB: A South Asian Perspective</i> (Cengage) · Hawkins, Best &amp; Coney — <i>Consumer Behavior: Building Marketing Strategy</i> · Solomon — <i>Consumer Behavior: Buying, Having and Being</i> · Evans, Jamal &amp; Foxall — <i>Consumer Behavior</i> (Wiley) · Nair — <i>Consumer Behavior &amp; Marketing Research</i>.</p>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Develop a better understanding of consumer-behaviour concepts and models</li>
+          <li>Draw insights from the consumer purchase-decision process</li>
+          <li>Develop appropriate marketing strategies for different consumer segments</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">Guest Faculty</p>
+      </div>
+    </details>
+
+    <!-- ======== MARKETING: MARKETING OF SERVICES ======== -->
+    <details class="course" data-track="mkt">
+      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-04</span><span class="ctitle">Marketing of Services</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">Why services need a marketing discipline of their own, the challenges they pose and how to deal with them — set against the emerging service environment in India and the world, with concepts and techniques for real services-marketing decisions.</p>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Understanding Services, Service Consumers &amp; Managing Service Quality</b>
+            <p>Difference between goods and services marketing; challenges of services marketing; role of internal and interactive marketing; services marketing myopia; the expanded services marketing mix; levels of service expectations; factors influencing consumers' perception of service; types and determinants of service quality; the Gap Model of service quality; the SERVQUAL instrument; service-quality research.</p></li>
+          <li><b>2 · Service as Product, Delivery Process &amp; Pricing</b>
+            <p>Core, facilitating and support services; levels of customer participation in service creation and strategies to enhance it; service blueprinting and its benefits; customer-service standards; managing demand fluctuations in creation and delivery; service-delivery intermediaries; setting service prices — costs, perceived value and competition; revenue management in specific industries; pricing concepts — price bundling, captive pricing, two-part pricing, loss-leader pricing, result-based pricing; price-competition challenges.</p></li>
+          <li><b>3 · Service Communication, Branding &amp; Physical Evidence</b>
+            <p>Challenges in designing communication programmes for services; service communication problems; matching service promises with delivery; services advertising; role of promotion; the servicescape — roles it plays and its effects; environmental dimensions of the servicescape; high-contact vs low-contact services; approaches for understanding servicescape effects.</p></li>
+          <li><b>4 · Service Failures, Recovery, People &amp; Customer Relationships</b>
+            <p>Service failures; recovery strategies and tactics; the service guarantee and its role in achieving quality; customer feedback systems; HR strategies for customer-oriented delivery; internal marketing — delivering the promise made through external marketing; interactive marketing — managing the moments of truth; guidelines for people in service organizations; service-oriented organizational structure; customer loyalty, customer lifetime value, customer equity; a framework for building loyalty.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">Zeithaml, Gremler, Bitner &amp; Pandit — <i>Services Marketing</i> (7e, TMH) · Wirtz, Lovelock &amp; Chatterjee — <i>Services Marketing</i> (9e, World Scientific) · Bordoloi, Fitzsimmons &amp; Fitzsimmons — <i>Service Management</i> (10e) · Hoffman &amp; Bateson — <i>Services Marketing: Concepts, Strategies &amp; Cases</i> (5e).</p>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Understand the concept of services and intangible products</li>
+          <li>Discuss the relevance of the services industry and examine its characteristics</li>
+          <li>Analyse the role and relevance of quality in services</li>
+          <li>Visualize future changes in the services industry</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">S.K. Biswal</p>
+      </div>
+    </details>
+
+    <!-- ======== HR: TEAM BUILDING ======== -->
+    <details class="course" data-track="hr">
+      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-08</span><span class="ctitle">Team Building in the Organizations</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">The skill and the will to work in teams — managing yourself as an effective team member, knowing a group from a team, and collaborating across online and offline teams to weed out dysfunctional behaviour.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Understand the difference between a group and a team</li>
+          <li>Recognise functional and dysfunctional team behaviour</li>
+          <li>Understand what makes an effective team leader</li>
+          <li>Build collaborative behaviour within teams</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · Why Groups &amp; Teams</b>
+            <p>Stages of team development — navigating, surviving and reorganizing through norming, storming, performing and reorganizing; why some teams pull together and some do not.</p></li>
+          <li><b>2 · Sustaining High Performance &amp; Effective Team Members</b>
+            <p>Goals of Stage 4 — getting the work done; managing cohesion and conflict; making team decisions; how high-performance teams function — goals, roles, norms, decisions, communication and feedback, cooperation and conflict management; avoiding blame-game politics; supporting leaders and handling dysfunctional team members; intra-group and inter-group dynamics.</p></li>
+          <li><b>3 · Developing Teams &amp; Dealing with Virtual Teams</b>
+            <p>Structure, organizational culture and team support; types of teams and developing yourself as a team member; evaluating team-member development; in-group/out-group dynamics; virtual teams — working through all phases of team development; conflict and collaboration in virtual teams.</p></li>
+          <li><b>4 · Effective Team Leadership &amp; Organizational Support</b>
+            <p>Leadership at different stages of team development; leadership and team-building style; teams and groups in organizations; building complementary team members; avoiding too much help as a leader; team autonomy and the organizational-support audit.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books">Wheelan — <i>Creating Effective Teams</i> (Sage) · Sinek — <i>Leaders Eat Last</i> · Clifton — <i>Team Management</i> · Forsyth — <i>Group Dynamics</i> (6e, Cengage) · Lencioni — <i>The Five Dysfunctions of a Team</i>. Practical exercise: watch and review the film <i>Lagaan</i>.</p>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Analyse the stages of team formation and develop team-building skills</li>
+          <li>Evaluate and manage conflict and collaboration in teams</li>
+          <li>Rearrange team formation for conflict resolution</li>
+          <li>Demonstrate being an effective team member in real teams</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">G. Kurup</p>
+      </div>
+    </details>
+
+    <!-- ======== HR: COACHING & MENTORING ======== -->
+    <details class="course" data-track="hr">
+      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-13</span><span class="ctitle">Coaching &amp; Mentoring</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <div class="cbody">
+        <p class="cdesc">The process of coaching and mentoring and the difference between the two — the attributes of a coaching mindset, how a manager develops coachability, and how to create a coaching-friendly context with real coaches and mentees.</p>
+        <h4>Objectives</h4>
+        <ul class="pts">
+          <li>Develop understanding of the coaching process</li>
+          <li>See mentoring as a developmental relationship</li>
+          <li>Understand coachability and the coaching mindset</li>
+          <li>Create real coaching and mentoring contexts</li>
+        </ul>
+        <h4>Units</h4>
+        <ol class="units">
+          <li><b>1 · The Coaching Manager &amp; Developmental Coaching</b>
+            <p>Coaching helps employees who want to learn — so why don't more managers coach? Developmental coaching and learning; the coaching manager and emotional intelligence; the difference between coaching and mentoring; how your approach to coaching determines outcomes; a simple model of developmental coaching; the coaching mindset, the coachable learner, the coaching mirror.</p></li>
+          <li><b>2 · Coaching Mindset, Coachability &amp; the Coaching-Friendly Context</b>
+            <p>Can anyone learn to coach? The question of coachability and hallmarks of the coachable learner; impression management; barriers to coaching. Defining a coaching-friendly context; high-performance organizations and coaching; protecting the context and seizing opportunities to coach; working with (or without) a competency model; the coaching manager as teacher and observer; using strengths; data vs behaviour; the role of the coachee.</p></li>
+          <li><b>3 · Balanced Feedback &amp; Collaborative Goal-Setting</b>
+            <p>Feedback and its problems; the basics of balanced feedback; the coaching dialogue and root cause; individual and team factors; cultural diversity and the importance of getting it right; treating career and performance problems as coaching opportunities; can coaching be delegated — and will technology help?</p></li>
+          <li><b>4 · Mentoring — Film &amp; Book Review</b>
+            <p>Evolution, concept and wherewithal of mentoring; the mentor process and gender differences in mentoring. Book review — <i>Tuesdays with Morrie</i> (Mitch Albom); film review — <i>Bhaag Milkha Bhaag</i>, for the difference between mentoring and coaching.</p></li>
+        </ol>
+        <h4>Core texts</h4>
+        <p class="books"><i>The Coaching Manager: Developing Top Talent in Business</i> (Sage) · <i>The Complete Handbook of Coaching</i> (Sage) · Kimsey-House et al. — <i>Co-Active Coaching</i> · Bungay Stanier — <i>The Coaching Habit</i> · Joshi &amp; Vohra — <i>Talent Management</i>, ch. 7 (Cengage).</p>
+        <h4>Outcomes</h4>
+        <ul class="pts">
+          <li>Analyse the difference between coaching and mentoring</li>
+          <li>Describe and develop a coaching mindset</li>
+          <li>Practise developmental coaching</li>
+          <li>Provide feedback tied to development goals</li>
+        </ul>
+        <h4>Faculty</h4>
+        <p class="books">S. Panda</p>
+      </div>
+    </details>
+
+    <p class="cnote" style="margin-top:14px">Codes, titles, unit contents, texts and outcomes are from the AICTE BBA (NEP-2020) Model Curriculum, Semester V — common cores CC501–CC502 and the Discipline-Specific Electives our tracks take. Codes shown match the abbreviations RIMS prints on the timetable. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams.</p>
+  </div>
+</section>
+<script>
+  function filt(t){
+    document.querySelectorAll('#filter button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.t===t);
+    });
+    document.querySelectorAll('.course').forEach(function(c){
+      c.classList.toggle('hide', !(t==='all'||c.dataset.track===t));
+    });
+  }
+</script>
+<footer>
+  <div class="footin">
+    <div>
+      <div class="fbrand">RIMS BBA '24 · 5th Semester</div>
+      <p style="margin-top:8px">Unofficial batch resource for our own reference. Always verify every detail against official sources — the department notice board, your faculty, and official AICTE / Sambalpur University documents.</p>
+    </div>
+    <p>Timetable from Master_TT, Odd 2026-27 (w.e.f. 17 July 2026). Syllabus, internship (SEC-702) and major-project guidelines from the AICTE Model Curriculum for UG Degree in BBA (NEP-2020) — Semester V. Rourkela Institute of Management Studies, Sambalpur University.</p>
+  </div>
+</footer>
+</body>
+</html>
