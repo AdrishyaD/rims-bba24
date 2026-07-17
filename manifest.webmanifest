@@ -1,0 +1,17 @@
+{
+  "name": "RIMS BBA '24 — 5th Semester",
+  "short_name": "BBA '24",
+  "description": "Timetable, full syllabus, and internship & project guides for the RIMS BBA '24 batch, 5th Semester.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eef0ef",
+  "theme_color": "#0f1319",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Internship Report &amp; Viva · BBA 5th Sem · RIMS BBA '24</title>
 <meta name="description" content="Summer internship (SEC-702) report structure, submission process and viva voce evaluation for BBA 5th Semester.">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0f1319">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="BBA '24">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -334,7 +342,35 @@
   .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
   .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
   .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
 </style>
+<script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
 </head>
 <body>
 <nav>
@@ -410,7 +446,7 @@
             <li>Learning section maps to your track (Fin/Mkt/HR) and its papers</li>
             <li>Proofread; consistent formatting; mentor has seen the final draft</li>
           </ul>
-          <div class="callout">Course outcomes on record: application of theoretical knowledge to real-world scenarios · development of professional skills and networking · understanding workplace culture and dynamics · hands-on experience in your chosen field. Make sure your report visibly demonstrates all four. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them.</div>
+          <div class="callout">Course outcomes on record: application of theoretical knowledge to real-world scenarios · development of professional skills and networking · understanding workplace culture and dynamics · hands-on experience in your chosen field. Make sure your report visibly demonstrates all four. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them. Confirm the exact submission date, number of copies and format with the department — this page follows the AICTE model guidelines, and RIMS may adjust them.</div>
         </div>
       </div>
     </div>
