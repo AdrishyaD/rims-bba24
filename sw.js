@@ -1,9 +1,9 @@
 /* RIMS BBA '24 — service worker (offline app shell) */
-const CACHE = 'rimsbba24-v1';
+const CACHE = 'rimsbba24-v2';
 const ASSETS = [
   '/', '/index.html', '/syllabus.html', '/internship.html', '/project.html',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png',
-  '/icon-512-maskable.png', '/apple-touch-icon.png'
+  '/icon-512-maskable.png', '/apple-touch-icon.png', '/favicon-32.png', '/navmark.png'
 ];
 
 self.addEventListener('install', function (e) {
@@ -27,6 +27,28 @@ self.addEventListener('fetch', function (e) {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // let cross-origin (fonts) hit network
+
+  const isPage = req.mode === 'navigate' ||
+    (req.headers.get('accept') || '').includes('text/html');
+
+  if (isPage) {
+    // network-first for HTML: always try to get the latest page when online,
+    // only fall back to the cached shell when offline
+    e.respondWith(
+      fetch(req).then(function (res) {
+        const copy = res.clone();
+        caches.open(CACHE).then(function (c) { c.put(req, copy); });
+        return res;
+      }).catch(function () {
+        return caches.match(req).then(function (cached) {
+          return cached || caches.match('/index.html');
+        });
+      })
+    );
+    return;
+  }
+
+  // cache-first for static assets (icons, manifest, etc.)
   e.respondWith(
     caches.match(req).then(function (cached) {
       if (cached) return cached;
@@ -34,8 +56,6 @@ self.addEventListener('fetch', function (e) {
         const copy = res.clone();
         caches.open(CACHE).then(function (c) { c.put(req, copy); });
         return res;
-      }).catch(function () {
-        return caches.match('/index.html');
       });
     })
   );
