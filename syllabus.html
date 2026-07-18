@@ -400,13 +400,73 @@
   .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
   .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
   .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
+
+  /* ---- multi-page additions ---- */
+  .navlinks a.on{color:var(--ink);background:#e2e4e4}
+  @media(max-width:480px){
+    .navin{gap:10px}
+    .brand{font-size:10.5px;letter-spacing:.01em}
+    .navlinks{gap:2px}
+    .navlinks a{padding:7px 7px;font-size:10.5px;letter-spacing:.04em}
+  }
+  .verify{background:var(--common-bg);border-left:3px solid var(--common);border-radius:4px;
+    padding:10px 14px;font-size:12.5px;color:#33383f;margin:18px 0 0;max-width:1020px}
+  .verify b{font-weight:600}
+  .vwrap{max-width:1020px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .pagecards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px}
+  @media(min-width:720px){.pagecards{grid-template-columns:1fr 1fr}}
+  .pagecard{display:block;background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:20px 20px 18px;text-decoration:none;transition:border-color .15s, transform .15s;
+    border-left:4px solid var(--common)}
+  .pagecard:hover{border-color:#b9bfc3;transform:translateY(-2px)}
+  .pagecard .pnum{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+  .pagecard h3{font-family:"Fraunces",serif;font-weight:600;font-size:22px;margin:6px 0 6px}
+  .pagecard p{font-size:13.5px;color:#33383f}
+  .pagecard .go{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fin);margin-top:12px;display:inline-block}
+  /* ---- timetable toggles ---- */
+  .ttbar2{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-bottom:14px}
+  .ttgroup{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .grid[data-sec="A"] .crow[data-sec="B"],
+  .grid[data-sec="B"] .crow[data-sec="A"]{display:none}
+  .grid[data-track="fin"] .opt:not([data-track="fin"]),
+  .grid[data-track="mkt"] .opt:not([data-track="mkt"]),
+  .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
+  .crow[data-sec]{transition:opacity .15s}
 </style>
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
 </head>
 <body>
 <nav>
   <div class="navin">
-    <a class="brand" href="index.html" style="text-decoration:none"><img class="brandmark" src="/navmark.png" alt="RIMS" width="26" height="26"><span class="bt">RIMS <b>BBA</b> '24 · 5th Sem</span></a>
+    <a class="brand" href="index.html" style="text-decoration:none">RIMS <b>BBA</b> '24 / 5th sem</a>
     <div class="navlinks"><a href="index.html#timetable">Timetable</a><a href="syllabus.html" class="on">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html">Project</a></div>
   </div>
   <div class="spectrum"><i class="c"></i><i class="f"></i><i class="m"></i><i class="h"></i></div>
@@ -708,7 +768,7 @@
       </div>
     </details>
 
-    <p class="cnote" style="margin-top:14px">Codes, titles, unit contents, texts and outcomes are from the AICTE BBA (NEP-2020) Model Curriculum, Semester V — common cores CC501–CC502 and the Discipline-Specific Electives our tracks take. Codes shown match the abbreviations RIMS prints on the timetable. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams.</p>
+    <p class="cnote" style="margin-top:14px">Codes, titles, unit contents, texts and outcomes are from the AICTE BBA (NEP-2020) Model Curriculum, Semester V — common cores CC501–CC502 and the Discipline-Specific Electives our tracks take. Codes shown match the abbreviations RIMS prints on the timetable. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams.</p>
   </div>
 </section>
 <script>
