@@ -244,6 +244,17 @@
   .grid[data-track="hr"]  .opt:not([data-track="hr"]){display:none}
   .crow[data-sec]{transition:opacity .15s}
 
+  /* verbatim-syllabus additions */
+  .cbody ol.pts{margin:0 0 0 20px}
+  .cbody ol.pts li{font-size:13.5px;margin:4px 0}
+  .units{counter-reset:none}
+  .units li+li{padding-top:10px;border-top:1px solid var(--line)}
+  .units p{margin:6px 0 0}
+  .units p.uobj{font-style:italic;color:var(--muted);margin-top:4px}
+  .rdg{margin-top:8px;font-size:12px;color:var(--muted);line-height:1.6}
+  .rdg b{color:#33383f;font-weight:600;display:block;margin-bottom:2px;
+    font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+  .rdg span{display:block;margin:2px 0;padding-left:12px;text-indent:-12px}
   .fillwrap{max-width:1020px;margin:0 auto;padding:22px clamp(16px,4vw,32px) 0}
   .fillnote{background:#2a1a1d;border:1px solid #5a3338;border-left:3px solid #c8102e;
     border-radius:5px;padding:13px 15px;color:#f0dcdc;font-size:12.5px;line-height:1.7}
@@ -263,7 +274,7 @@
 <section id="syllabus">
   <div class="wrap">
     <div class="shead"><span class="snum">02</span><h2>Syllabus</h2></div>
-    <p class="ssub">The eight papers on our timetable, in full — course description, objectives, complete unit-wise contents, core texts, suggested cases and outcomes, straight from the AICTE BBA (NEP-2020) Model Curriculum, Semester V. Tap a paper to open it. Filter to your track:</p>
+    <p class="ssub">The eight papers on our timetable, reproduced in full and unabridged from the AICTE BBA (NEP-2020) Model Curriculum, Semester V &mdash; every course objective, unit, reading list, textbook and outcome exactly as printed in the syllabus document. Tap a paper to open it. Filter to your track:</p>
     <div class="filter" id="filter">
       <button data-t="all" aria-pressed="true" onclick="filt('all')">All</button>
       <button data-t="common" aria-pressed="false" onclick="filt('common')">Common</button>
@@ -272,293 +283,169 @@
       <button data-t="hr" aria-pressed="false" onclick="filt('hr')">HR</button>
     </div>
 
-    <!-- ======== COMMON: STRATEGIC MANAGEMENT ======== -->
     <details class="course" data-track="common">
-      <summary><span class="ctag common">Common</span><span class="ccode">CC501</span><span class="ctitle">Strategic Management</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag common">Common</span><span class="ccode">CC 501</span><span class="ctitle">Strategic Management</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">How firms build and sustain competitive advantage — thinking like a general manager who must pull accounting, finance, HR, information systems, marketing and operations into one cohesive whole.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Enhance the ability to do the job of a general manager responsible for strategic performance — integrating the different functional areas of business into a cohesive whole</li>
-          <li>Analyse the competitive situation and evaluate the challenges managers face in implementing and evaluating strategies across businesses, industries and cultures</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Introduction to Strategy</b>
-            <p>Strategy — concept, relevance, role and benefits; importance of strategic management; the strategic management process; levels of strategy; approaches to strategic decision-making; strategic intent — vision, mission, goals and objectives; strategy and corporate governance; social responsibility and ethics in strategic management. Also traces how strategic-management thinking has evolved over the decades.</p></li>
-          <li><b>2 · Strategic Analysis</b>
-            <p>Environmental appraisal — scanning the technological, social, cultural, demographic, political and legal environment; components and analysis of the general (external) environment; industry analysis — analysis of the competitive environment; analysis of the internal environment — strategic capability, nature, characteristics, types and approaches; value chain analysis; experience curve; SWOT analysis; BCG Matrix; GE nine-cell Matrix. Goal: judge the value-capturing ability of incumbents and forecast industry profitability from shifts in underlying forces.</p></li>
-          <li><b>3 · Strategy Formulation</b>
-            <p>Business strategy — generic strategies; functional areas and the link between business strategy and functional strategy. Corporate strategy — creating value and diversification; strategic alliances; international expansion strategies (multi-domestic approach, franchising, licensing, joint ventures); strategies of growth, stability and renewal — concentrated growth, product development, integration, diversification; renewal via retrenchment and turnaround; strategic fundamentals of mergers &amp; acquisitions; Blue Ocean strategy.</p></li>
-          <li><b>4 · Strategy Implementation &amp; Control</b>
-            <p>Structural, functional/operational and behavioural implementation; strategy evaluation and control; strategic leadership; strategic control and corporate governance; issues in strategy implementation; creating effective organizational designs; strategy and society; managing innovation and fostering corporate entrepreneurship; integrating functional plans and policies; operational control and an overview of management control — turning internal alignment and temporary opportunities into sustainable advantage.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">Wheelen, Hunger, Hoffman, Bamford &amp; Kansal — <i>Concepts in Strategic Management &amp; Business Policy</i> (15e, Pearson) · Rothaermel — <i>Strategic Management</i> (5e Indian, McGraw Hill). Key readings: Porter — <i>The Five Competitive Forces that Shape Strategy</i> (HBR) · Collis &amp; Montgomery — <i>Competing on Resources</i> · Kim &amp; Mauborgne — <i>Blue Ocean Strategy</i> · Hambrick &amp; Fredrickson — <i>Are You Sure You Have a Strategy?</i> · Porter &amp; Kramer — <i>Competitive Advantage &amp; CSR</i>.</p>
+        <h4>Course Objective(s)</h4>
+        <p class="cdesc">The objective of this course are:</p>
+        <ol class="pts"><li>To enhance the ability to do the job of a general manager responsible for strategic performance. Specifically, to integrate the different functional areas of business (e.g. accounting, finance, human resources, information systems, marketing, operations management, etc.) into a cohesive whole.</li><li>Analyse the competitive situation and evaluate challenges faced by managers in implementing and evaluating strategies based on the nature of business, industry, and cultural differences.</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Introduction to Strategy</b><p class="uobj">The objectives of this topic is to understand concept of &quot;strategy&quot;, and discuss the most common elements of strategy; the topic also undertakes the evolution of strategic management thinking over the decades; the topic covers the importance of strategic thinking and gives insight into how the firms build and sustain competitive advantage.</p><p>Strategy – concept, relevance, role and benefits; Importance of Strategic Management; Strategic Management Process, Levels of Strategy; Approaches to Strategic Decision Making; Strategic Intent – Vision, Mission, Goals and Objectives; Strategy and Corporate Governance, Social Responsibility and Ethics in Strategic Management</p><div class="rdg"><b>Readings:</b><span>Thomas L Wheelen, J David Hunger, Alan N Hoffman, Charles E Bamford and Purva Kansal (2018). Concepts in Strategic Management and Business Policy: Globalization, Innovation and Sustainability, 15th Edition, Pearson. [Chapter 1, 2 and 3].</span><span>Frank T Rothaermel (2023). Strategic Management – 5th Edition (Indian), McGraw Hill. [Chapters 1 and 12].</span><span>Hambrick, D. C., &amp; Fredrickson, J. W. (2005). Are you sure you have a strategy?. Academy of Management Perspectives, 19(4), 51-62.</span><span>Porter, M. E., &amp; Kramer, M. R. (2006). The link between competitive advantage and corporate social responsibility. Harvard business review, 84(12), 78-92.</span></div></li><li><b>Unit 2: Strategic Analysis</b><p class="uobj">The objective of the unit are to evaluate the value-capturing ability of incumbents in an industry using the industry analysis tools, to forecast industry profitability from shifts in underlying conditions and forces; to understand the industry for strategy formulation.</p><p>Environmental appraisal- Scanning the Environment ,Technological, Social, Cultural, Demographic, Political, Legal; Evaluating Company’s External Environment: Components of External Environment; Analysis of the general environment; Nature, Characteristics, Types and Approaches of External environment, Key External Forces, Industry Analysis – Analysis of the competitive environment ; Analysis of the Internal environment: Strategic capability, Nature, Characteristics, Types and Approaches to internal environment; Value chain analysis , Experience Curve, SWOT analysis, BCG Matrix, GE- Cell Matrix.</p><div class="rdg"><b>Readings:</b><span>Thomas L Wheelen, J David Hunger, Alan N Hoffman, Charles E Bamford and Purva Kansal (2018). Concepts in Strategic Management and Business Policy: Globalization, Innovation and Sustainability, 15th Edition, Pearson.</span><span>Frank T Rothaermel (2023). Strategic Management – 5th Edition (Indian), McGraw Hill.</span><span>Porter, M. E. The five competitive forces that shape strategy. Harvard business review, 86(1), 78.</span><span>Collis, D. J., &amp; Montgomery, C. A. Competing on resources. Harvard business review, 86(7/8), 140.</span></div></li><li><b>Unit 3: Strategy Formulation</b><p class="uobj">The objectives of the Unit are to review corporate strategy for a diversified firm and identify the sources of corporate advantage; to understand the mechanism of diversification leading to value creation. It also helps to develop understanding about the different corporate strategies which are crucial for the survival, growth and expansion of the business.</p><p>Business Strategy Formulation: Generic strategies; Functional areas and link between business strategy and functional strategy; Corporate Strategy Formulation: Creating value and diversification; Strategic alliances; International expansion strategies; Introduction to strategies of growth, stability and renewal, types of growth strategies concentrated growth, product development, integration, diversification, international expansion (multi domestic approach, franchising, licensing and joint ventures); Types of renewal strategies retrenchment and turnaround. Strategic fundamentals of merger &amp; acquisitions</p><div class="rdg"><b>Readings:</b><span>Thomas L Wheelen, J David Hunger, Alan N Hoffman, Charles E Bamford and Purva Kansal (2018). Concepts in Strategic Management and Business Policy: Globalization, Innovation and Sustainability, 15th Edition, Pearson. [Chapter 6,7,8]</span><span>Frank T Rothaermel (2023). Strategic Management – 5th Edition (Indian), McGraw Hill. [Chapters 6 , 7, 8 and 9]</span><span>Kim, W. C. (2005). Blue ocean strategy: from theory to practice. California management review, 47(3), 105-121.</span></div></li><li><b>Unit 4: Strategy Implementation and Control</b><p class="uobj">The objectives of this topic are to understand the importance of internal alignment and learn to leverage temporary opportunities into sustainable advantages; the topic also dwells in Value Innovation, Business Delivery System Innovation and Eco System Innovation for sustainable business performances.</p><p>Structural Implementation; Functional and Operational Implementation; Behavioural Implementation; Strategy Evaluation and Control; Strategic leadership; Strategic control and corporate governance; Issues in Strategy Implementation; Creating effective organizational designs; Strategy and society; Managing innovation and fostering corporate entrepreneurship; Integration of Functional Plans and Policies- Strategy Evaluation and Control - Operational Control - Overview of Management Control.</p><div class="rdg"><b>Readings:</b><span>Thomas L Wheelen, J David Hunger, Alan N Hoffman, Charles E Bamford and Purva Kansal (2018). Concepts in Strategic Management and Business Policy: Globalization, Innovation and Sustainability, 15th Edition, Pearson. [Chapter 9,10,12 and 12]</span><span>Frank T Rothaermel (2023). Strategic Management – 5th Edition (Indian), McGraw Hill. [Chapters 11]</span></div></li></ol>
+        <h4>Text Books (Latest Edition)</h4>
+        <ul class="pts"><li>Thomas L Wheelen, J David Hunger, Alan N Hoffman, Charles E Bamford and Purva Kansal . Concepts in Strategic Management and Business Policy: Globalization, Innovation and Sustainability, 15th Edition, Pearson.</li><li>Frank T Rothaermel . Strategic Management – 5th Edition (Indian), McGraw Hill.</li></ul>
+        <h4>Suggested Readings</h4>
+        <ol class="pts"><li>Arthur A Thompson, Margaret A Peteraf, John E Gamble, AJ Strickland III, Thomas Joseph (2021). Crafting and Executing Strategy: The Quest for Competitive Advantage: Concepts &amp; Cases, 22nd Edition, McGraw Hill.</li><li>Krishna G. Palepu, Tarun Khanna. (2010). Winning in Emerging Markets: A Roadmap for Strategy and Execution, Harvard Business Press.</li><li>Porter, M.E., Competitive Advantage: Creating and Sustaining Superior Performance, Free Press, New York.</li><li>Pankaj Ghemawat, “Strategy and the Business Landscape” Pearson Education</li><li>Porter, M. E. (1989). From competitive advantage to corporate strategy (pp. 234-255). Macmillan Education UK.</li></ol>
         <h4>Faculty</h4>
         <p class="books">Srikant Panda / Manas Nayak (both sections)</p>
       </div>
     </details>
 
-    <!-- ======== COMMON: LSCM ======== -->
     <details class="course" data-track="common">
-      <summary><span class="ctag common">Common</span><span class="ccode">CC502</span><span class="ctitle">Logistics &amp; Supply Chain Management</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag common">Common</span><span class="ccode">CC 502</span><span class="ctitle">Logistics and Supply Chain Management</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">Managing and optimizing supply chains in modern business — logistics, strategic fit, network design, sourcing, pricing and demand management, with a running emphasis on how digital transformation and e-commerce reshape supply-chain strategy.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Understand the strategic role of supply chain management in enhancing organizational competitiveness</li>
-          <li>Explore the design and optimization of supply chain networks, particularly for e-commerce</li>
-          <li>Examine the impact of sourcing and pricing decisions on supply chain efficiency and effectiveness</li>
-          <li>Develop skills in coordinating and managing supply and demand in a globalized market</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Introduction to Supply Chain Management</b>
-            <p>The role of supply chain management in organizations; achieving strategic fit; supply chain drivers and metrics — how supply chains align business strategy with operational capability to lift performance and competitiveness.</p></li>
-          <li><b>2 · Supply Chain Network Design</b>
-            <p>Designing distribution networks with a focus on e-business applications and global supply chain networks; strategies and challenges of building supply chains that are both efficient and responsive, aligned with business objectives and dynamic global markets.</p></li>
-          <li><b>3 · Sourcing &amp; Pricing Strategies</b>
-            <p>Sourcing decisions and pricing management within supply chains; sourcing strategies and pricing models for revenue management and cost-efficiency, with particular focus on e-commerce dynamics.</p></li>
-          <li><b>4 · Demand &amp; Supply Coordination</b>
-            <p>Synchronizing demand forecasting, aggregate planning, and sales &amp; operations planning; demand-forecasting techniques, aggregate-planning strategies, and coordination across the chain to balance demand and supply efficiently.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">Chopra &amp; Meindl — <i>Supply Chain Management: Strategy, Planning &amp; Operation</i> (7e, Pearson) · Martin Christopher — <i>Logistics &amp; Supply Chain Management</i> (5e, Pearson).</p>
-        <h4>Suggested cases</h4>
-        <ul class="pts">
-          <li>Dell's direct model in PC manufacturing — integrating supply chain and e-business</li>
-          <li>Starbucks' sustainable sourcing practices — a supply chain perspective</li>
-          <li>Walmart's supply chain management strategies for global dominance</li>
-        </ul>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Design and manage effective supply chains that enhance competitiveness</li>
-          <li>Gain practical insight into strategic sourcing, demand planning and coordination</li>
-          <li>Understand how digital transformation affects supply chain strategy and operations</li>
-        </ul>
+        <h4>Course Description</h4>
+        <p class="cdesc">Supply Chain Management is a comprehensive course that equips students with essential skills to manage and optimize supply chains in modern business environments. The course covers logistics, strategic fit, network design, sourcing, pricing, and demand management, emphasizing the impact of digital transformation on supply chain strategies and operations. Through case studies and practical insights, students will learn to design effective supply chain networks, optimize e-commerce operations, and manage global challenges.</p>
+        <h4>Course Objectives</h4>
+        <ol class="pts"><li>To understand the strategic role of supply chain management in enhancing organizational competitiveness.</li><li>To explore the design and optimization of supply chain networks, particularly for e-commerce.</li><li>To examine the impact of sourcing and pricing decisions on supply chain efficiency and effectiveness.</li><li>To develop skills in coordinating and managing supply and demand in a globalized market environment.</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Introduction to Supply Chain Management</b><p>This unit explores the role of supply chain management in organizations, achieving strategic fit, and understanding supply chain drivers and metrics. Students will learn about the integral nature of supply chains in aligning business strategies with operational capabilities to enhance performance and competitiveness.</p></li><li><b>Unit 2: Supply Chain Network Design</b><p>Students will learn to design distribution networks with a focus on e-business applications and global supply chain networks. This unit covers the strategies and challenges of creating efficient and responsive supply chain networks that align with business objectives and the dynamic nature of global markets.</p></li><li><b>Unit 3: Sourcing and Pricing Strategies</b><p>This unit addresses sourcing decisions and pricing management within supply chains. Students will explore various sourcing strategies and pricing models that can be employed to optimize revenue management and cost-efficiency in supply chains, with a particular focus on e-commerce dynamics.</p></li><li><b>Unit 4: Demand and Supply Coordination</b><p>Focusing on the synchronization of demand forecasting, aggregate planning, and sales operations planning, this unit teaches students how to coordinate supply chain activities to balance demand and supply efficiently. Key topics include demand forecasting techniques, aggregate planning strategies, and the importance of coordination across the supply chain.</p></li></ol>
+        <h4>Textbooks and References (Latest Editions)</h4>
+        <ol class="pts"><li>Supply Chain Management: Strategy, Planning, and Operation, 7th ed., by Sunil Chopra &amp; Peter Meindl, Pearson.</li><li>Logistics &amp; Supply Chain Management, 5th ed., by Martin Christopher, Pearson.</li></ol>
+        <h4>Suggested Case Topics</h4>
+        <ul class="pts"><li>Dell’s direct model in PC manufacturing: Integration of supply chain and e-business.</li><li>Starbucks’ sustainable sourcing practices: A supply chain perspective.</li><li>Walmart’s supply chain management strategies for global dominance.</li></ul>
+        <h4>Course Outcomes</h4>
+        <ol class="pts"><li>Design and manage effective supply chains that enhance organizational competitiveness.</li><li>Gain practical insights into strategic sourcing, demand planning, and supply chain coordination.</li><li>Understand how digital transformation affects supply chain strategies and operations.</li></ol>
+        <h4>Suggested Research Paper Reading</h4>
+        <p class="cdesc">Eyo-Udo, N. L., Odimarha, A. C., &amp; Kolade, O. O. (2024). Ethical supply chain management: balancing profit, social responsibility, and environmental stewardship. International Journal of Management &amp; Entrepreneurship Research, 6(4), 1069-1077.</p>
+        <h4>Suggested Pedagogy</h4>
+        <p class="cdesc">This course employs various pedagogical methods, including interactive lectures, student discussions, presentations, engagement with research articles, case studies, and simulation exercises to provide a rich learning environment that fosters understanding and application of supply chain management principles.</p>
         <h4>Faculty</h4>
         <p class="books">Satyajit Jena</p>
       </div>
     </details>
 
-    <!-- ======== FINANCE: BANKING & INSURANCE ======== -->
     <details class="course" data-track="fin">
-      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin09</span><span class="ctitle">Banking &amp; Insurance</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin09</span><span class="ctitle">Banking and Insurance</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">A thorough examination of the principles, practices and regulatory structures governing India's banking and insurance sectors — functions, procedures, products and services — preparing you for careers in banking, insurance and financial services.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Develop understanding of the fundamental principles and functioning of banking in India</li>
-          <li>Explain concepts and general principles of insurance in relation to risk and its management</li>
-          <li>Expand knowledge of products, services and the latest technologies used in both sectors</li>
-          <li>Equip yourself with techniques to analyse the financial performance of banks for risk management</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Introduction to Banking &amp; Insurance</b>
-            <p><i>Banking:</i> evolution, structure and development of banking in India — commercial (public, private, foreign), rural and co-operative banks; role of banks in economic development; RBI — objectives, functions and developmental role; fee-based and fund-based products; types of accounts, deposits, advances and collaterals; management of bank assets &amp; liabilities; reading a commercial bank's balance sheet and income statement; CAMEL rating and banking ratios; banking regulations and BASEL norms; capital adequacy — SLR, CRR, CAR; asset–liability management; NPAs — problems and management efforts. <i>Insurance:</i> evolution, structure and development in India; insurance vs assurance; general principles and terminology; risk — meaning, risk vs uncertainty, chances of loss, peril and hazard, classification of risks; risk pooling, insurable risks vs hedging, risk-transfer methods; IRDA — duties, powers and functions; the Banking Regulation (Amendment) Act 2020.</p></li>
-          <li><b>2 · Retail Banking</b>
-            <p>Account-opening process and documentation — KYC and AML; retail products overview (customer requirements and product development); liability and asset products; credit scoring and CIBIL; retail product marketing strategies — tie-ups for personal loans, credit cards, educational loans, auto/vehicle loans and home loans; delivery channels — branch, extension counters, universal banking, ATMs, POS, internet banking, m-banking; customer relationship management and stages of the CRM process; technology for retail banking — static information, account opening, loan origination, transaction information, disbursement and final settlement.</p></li>
-          <li><b>3 · Life Insurance</b>
-            <p>Fundamental principles and basic features of life-insurance contracts; products — traditional vs unit-linked, individual vs group, with and without profit; policy types — term, whole life and variants, endowment and variants, annuities and pension plans; special policies for children, women and the disabled; mortality table; premium types, payment options and calculation — factors affecting premium; assignment, nomination and surrender; policy lapse, revival and paid-up value; application and acceptance procedure; claims — survival benefits, death, maturity, early and non-early claims, documents for early claims; death by unnatural causes; claims-concession clauses; presumption of death; marketing channels and bancassurance.</p></li>
-          <li><b>4 · General Insurance</b>
-            <p>Meaning, evolution and growth; fundamentals of general insurance. Fire insurance — coverage, consequential loss, declaration policies. Marine — cargo and hull policies, institute clauses, open policies. Motor — types, third-party, comprehensive, conditions, exclusions, premium. Health &amp; mediclaim, personal accident, liability, burglary, rural and agricultural covers, engineering and consequential-loss covers, aviation hull &amp; liability, miscellaneous insurances. Underwriting and premium rating — proposal forms, cover notes, certificates, endorsements, premium loading. Claim settlement — procedure, TPAs, claim forms, investigation/assessment, essential documents, settlement limitation, arbitration, loss minimisation and salvage.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">IIBF — <i>Principles &amp; Practices of Banking</i>, <i>Banking Products &amp; Services</i>, <i>Risk Management</i> · Rose &amp; Hudgins — <i>Bank Management &amp; Financial Services</i> · Koch &amp; MacDonald — <i>Bank Management</i> · Trieschmann, Hoyt &amp; Sommer — <i>Risk Management &amp; Insurance</i> · Insurance Institute of India — <i>Principles of Insurance</i>, <i>Practice of Life Insurance</i>, <i>Practice of General Insurance</i>.</p>
-        <h4>Suggested cases</h4>
-        <ul class="pts">
-          <li>The rise and fall of a particular bank · a bank fraud case</li>
-          <li>Merger of associate banks with State Bank of India</li>
-          <li>Digital transformation in banking / insurance</li>
-          <li>Ayushman Bharat and the Indian medical-insurance sector</li>
-        </ul>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Explain how the banking and insurance sectors function and relate to the economy</li>
-          <li>Compare products and services across both sectors</li>
-          <li>Evaluate product pricing, marketing and distribution channels</li>
-          <li>Apply tools for financial-performance analysis and risk management</li>
-        </ul>
+        <h4>Course Description</h4>
+        <p class="cdesc">This course provides a thorough examination of the principles, practices, and regulatory structures governing the banking and insurance sectors in India. Students will be oriented with the functions, procedures, products and services of banks and insurance companies. This course aims to facilitate a comprehensive understanding of the banking and insurance sectors, equipping students for careers in banking, insurance, financial services, or related fields.</p>
+        <h4>Course Objective(s)</h4>
+        <ol class="pts"><li>Develop understanding of fundamental principles and functioning of banking in India.</li><li>Explain concepts and general principles of insurance in relation with risk and its management.</li><li>Expand knowledge of various products &amp; services and latest technologies used in banking and insurance sector.</li><li>Equip students with techniques to analyse the financial performance of banks for the purpose of risk management.</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Introduction to Banking and Insurance</b><p>Evolution, structure, development of banking in India - Commercial (Public, Private and Foreign), Rural, Co-Operative bank. Significance and role of banks in economic development and growth. RBI - objectives, functions and role in development. Banking Products – Fee based and Fund based products. Types of Accounts, Deposits, Advances and Collaterals. Nature of Banks Investments -- Management of assets and liabilities of banks, Understanding commercial banks’ balance sheet and income statement, CAMEL Rating and different banking ratios. Banking Regulations, Introduction to BASEL Norms. Capital Adequacy requirement, SLR, CRR, CAR requirements. Overview of Risk Management in Banks—Asset Liability Management. Non-Performing Assets – Problems and efforts to manage them.</p><p>Evolution, structure, development of insurance in India. Definition of Insurance and Assurance. General Principles of Insurance, Insurance Terminology. Purpose and Need of Insurance--- Risk Meaning and definition, Risk and uncertainty, Chances of loss – Peril and Hazard - Classification of risks . Techniques of managing risk – Risk pooling-insurable risks vs. hedging – Risk Transfer Methods. Insurance Regulatory and Development Authority (IRDA) Duties, Powers and Functions of IRDA, The Banking Regulation (Amendment) Act, 2020</p></li><li><b>Unit 2: Retail Banking</b><p>Account opening process and documentation of different types of accounts – KYC and AML. Retail Products Overview (Customer requirements and Products development). Description of Liability products, Description of Asset Products. Credit scoring and CIBIL. Retail Product Marketing Strategies-- Tie-up with Institutions for Personal loans/ Credit cards/ Educational loans/ Authorized Dealers for Auto/ Vehicle loans, and with Builders/ Developers for Home loans. Delivery Channels - Branch, Extension counters, Universal Banking, ATMs, POS, Internet Banking, M-Banking. Customer Relationship Management, stages in CRM process. Technology for Retail Banking - Static information, Account opening, basic loan origination data etc. Updated information like income details at different frequencies. Transaction information, disbursement and final settlement of the loan amount.</p></li><li><b>Unit 3: Life Insurance</b><p>Fundamental principles of life insurance. Basic features of life insurance contracts. Life insurance products – Traditional and unit linked policies, Individual and group policies - With and without profit policies. Types of life insurance policies – Term insurance, Whole life insurance and its variants, Endowment insurance and its variants, Annuities and Pension Plans. Special Policies for children, females and handicapped. Mortality table, Different types of premiums, Premium payment options Premium calculations – Factors affecting premium. Assignment Nomination and Surrender of policy. Policy lapse and revival, Paid up value of policy. Insurance Application and Acceptance Procedure. Policy claims: Survival benefits, Death claims – Maturity claims, Early claims &amp; non–early claims. Documents required for processing early claims. Death due to un-natural causes or accidents. Claims concession clause and extended claims concession clause – Presumption of death. Different channels for marketing of insurance, Bancassurance.</p></li><li><b>Unit 4: General Insurance.</b><p>Meaning, Evolution and Growth of General Insurance. Fundamentals of General Insurance. Fire Insurance: Fire Insurance coverage, Consequential loss (fire), Declaration policies. Marine Insurance: Marine Cargo policies, Hull policies, Institute cargo clauses, Institute hull clauses, Open policies. Motor Insurance: Types of policies, Third party Insurance, Comprehensive coverage, Conditions and Exclusions – premium. Health Insurance and Mediclaim policies, Personal Accident Insurance, Liability Insurance, Burglary Insurance, Rural Insurance covers, Agricultural Insurance Engineering Insurance and its Consequential loss covers, Aviation hull and Aviation liability other Miscellaneous Insurances. Underwriting and Premium Rating: Proposal forms, Cover notes, Certificates of Insurance, Endorsements, Premium Rating, Premium Loading. Settlement of Claims: Claim procedure, TPAs, Claim forms, Investigation / Assessment. Essential Claim Documents. Settlement Limitation, Arbitration, Loss Minimization and Salvage.</p></li></ol>
+        <h4>Textbooks (Latest Editions)</h4>
+        <ol class="pts"><li>Indian Institute of Banking and Finance; Risk Management. Macmillan India Ltd.</li><li>Koch, T. W., &amp; MacDonald, S. S. ;Bank Management. Cengage Learning.</li><li>Rose, P. S., &amp; Hudgins, S. C. Bank ;Management and Financial Services. McGraw Hill.</li><li>Indian Institute of Banking and Finance; Principles &amp; Practices of Banking. Macmillan Indian Ltd.</li><li>Indian Institute of Banking and Finance; Banking Products &amp; Services. Taxman Publications Pvt. Ltd.</li><li>Trieschmann, J. S., Hoyt, R. E., &amp; Sommer, D. W; Risk Management &amp; Insurance. Cengage Learning.</li><li>Insurance Institute of India; Principles of Insurance. Mumbai.</li><li>Insurance Institute of India; Practice of Life Insurance. Mumbai.</li><li>Insurance Institute of India; Practice of General Insurance. Mumbai.</li></ol>
+        <h4>Research Papers / Articles</h4>
+        <ol class="pts"><li>Reddy, Y. V. (2006). &quot;Economic Policies and India&#x27;s Reform Agenda: New Thinking&quot;. New Delhi: Orient BlackSwan.</li><li>Das, S. (2023). &quot;Retail Credit Growth in India: Post-Pandemic Trends and Analysis.&quot; RBI Bulletin.</li><li>Patra, M. D. (2024). &quot;Monetary Policy in India: Navigating Inflation and Growth.&quot; RBI Bulletin.</li><li>Gupta, S. (2023). &quot;Evolution and Sustainability of Retail Credit in India.&quot; RBI Bulletin.</li><li>Ravi, S., &amp; Bose, S. (2023). &quot;Insurance and Economic Growth in India: A Critical Review.&quot; Journal of Risk and Insurance, 90(1), 123-145.</li><li>Sen, S., &amp; Gupta, P. (2023). &quot;Impact of Technology on the Insurance Sector in India.&quot; Insurance: Mathematics and Economics, 98, 45-59.</li><li>Roy, A., &amp; Chakraborty, T. (2023). &quot;Risk Management in Indian Insurance Companies.&quot; Journal of Financial Services Research, 57(2), 211-229.</li></ol>
+        <h4>Case Topics / Areas</h4>
+        <ol class="pts"><li>The Rise and Fall of a Particular Bank</li><li>Merger of Associate Banks with State Bank of India</li><li>Any Particular Bank Fraud Case</li><li>Digital Transformation in Insurance Sector / Banking Sector</li><li>Ayushman Bharat Scheme and Indian Medical Insurance Sector</li></ol>
+        <h4>Course Learning Outcome (s)</h4>
+        <p class="cdesc">On successful completion of the course students will be able to:</p>
+        <ol class="pts"><li>Explain the functioning of the Banking and Insurance sectors and relate their growth with the economy as a whole.</li><li>Compare various products and services offered by Banking and Insurance sectors.</li><li>Evaluate product pricing, marketing, and distribution channels of Banking and Insurance sectors.</li><li>Equip with tools and techniques for financial performance analysis and risk management in Banking and Insurance.</li></ol>
         <h4>Faculty</h4>
         <p class="books">Sumana Mondal</p>
       </div>
     </details>
 
-    <!-- ======== FINANCE: FMPS ======== -->
     <details class="course" data-track="fin">
-      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin03</span><span class="ctitle">Financial Markets, Products &amp; Services</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag fin">Finance</span><span class="ccode">DSE-Fin03</span><span class="ctitle">Financial Markets Products and Services</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">An in-depth look at the structure, functioning and significance of financial markets, the variety of products traded in them, and the services built around them — the knowledge and analytical skill to navigate a complex financial environment.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Understand the role and importance of financial markets in the economy</li>
-          <li>Analyse various financial products and their characteristics</li>
-          <li>Evaluate the role of financial intermediaries and services in the financial system</li>
-          <li>Apply the knowledge to real-world financial decision-making</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Financial System &amp; Markets</b>
-            <p>Financial system — need, structure, functions and scope of financial markets; financial intermediation and intermediaries; fund-based and fee-based products. <i>Money market:</i> instruments — T-bills, commercial papers, certificates of deposit, call money, money-market mutual funds, commercial bills; trading mechanisms. <i>Capital market:</i> primary and secondary markets; methods of floatation — IPOs, book building, private placements, rights and bonus issues; investor protection and recent trends in the primary market; SEBI — objectives, role, functions and powers. Stock exchanges — NSE, BSE; index construction — weighted aggregate value, weighted average of price relatives, free-float methods; brokers and types of market orders; BOLT and NEAT trading systems; T+2 trading cycle and settlement types; pay-in/pay-out, bad delivery, short delivery, auction, demat vs physical settlement; circuit breakers and market makers.</p></li>
-          <li><b>2 · Leasing &amp; Hire Purchase</b>
-            <p>Leasing — definition, types and features; advantages and disadvantages; main clauses in a lease agreement; buy-vs-lease decision — tax and depreciation aspects; lease evaluation from the lessee's and lessor's perspectives; major leasing institutions in India. Hire purchase — concepts and features; evaluation with tax and depreciation implications; choosing between leasing and hire purchase; installment purchase and how it differs from hire purchase.</p></li>
-          <li><b>3 · Mutual Funds, Credit Rating &amp; Securitization</b>
-            <p>Mutual funds — definition and history; types; advantages and disadvantages; establishing a fund — trustee, sponsor, AMC, custodian; entry/exit load; NAV concept and calculation; SIP and SWP; the Indian MF industry and its regulation. Credit rating — definition; rating process for financial instruments; rating methodology, agencies and symbols; advantages and disadvantages.</p></li>
-          <li><b>4 · Factoring, Forfaiting &amp; Bill Discounting</b>
-            <p>Factoring — definition and types: with-recourse and without-recourse, domestic and international; export and import factor; single-factor, direct-export and direct-import factoring systems; fees — finance charge and service fee; pros and cons. Bill discounting — definition, nature, importance, types; bill discounting vs factoring; bill rediscounting. Forfaiting — definition, nature and importance; mechanism of a forfaiting transaction; discount and commitment fees; pros and cons; factoring vs forfaiting. <i>Numericals on leasing, hire purchase, factoring, forfaiting, bill discounting and NAV calculations.</i></p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">M.Y. Khan — <i>Financial Services</i> and <i>Indian Financial System</i> (TMH) · Kohn — <i>Financial Institutions and Markets</i> · Fabozzi &amp; Modigliani — <i>Foundations of Financial Markets &amp; Institutions</i> · Machiraju — <i>Indian Financial Systems</i> · Pathak — <i>Indian Financial System</i> (Pearson).</p>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Define key terms — lease and hire-purchase agreements, factoring, forfaiting, bills of exchange, mutual-fund types, rating agencies</li>
-          <li>Explain how leasing works, the stages of hire purchase and the role of credit-rating agencies</li>
-          <li>Evaluate factoring vs forfaiting for a company's receivables and recommend the right option</li>
-          <li>Analyse the mutual-fund landscape and evaluate performance metrics</li>
-        </ul>
+        <h4>Course Description</h4>
+        <p class="cdesc">This course provides an in-depth understanding of the structure, functioning, and significance of financial markets, the variety of financial products available, and the diverse range of financial services offered. It aims to equip students with the knowledge and analytical skills necessary to navigate the complex financial environment. The course covers major financial markets and explores the characteristics and applications of key financial products and financial services.</p>
+        <h4>Course Objectives</h4>
+        <p class="cdesc">The course aims to build</p>
+        <ol class="pts"><li>Understand the role and importance of financial markets in the economy.</li><li>Analyse various financial products and their characteristics.</li><li>Evaluate the role of financial intermediaries and services in the financial system.</li><li>Apply knowledge of financial products and services to real-world financial decision-making</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Financial System and Markets</b><p>Financial System – Need, structure, functions and scope of financial markets. Financial intermediation and financial intermediaries. Fund based and fee-based financial products.</p><p>Money Market: Introduction, Instruments —T-Bills, Commercial Papers, Certificate of Deposits, Call Money, Money Market Mutual Funds, Commercial Bills. Trading mechanism of various money instruments.</p><p>Capital Market: Meaning, Functions, Primary and Secondary Market. Methods of floatation of Capital –IPO’s, Book building, Private Placements, Rights Issue, Bonus Issue. etc. Investor protection in primary market. Recent trends in primary market. SEBI – objectives, role, functions and powers.</p><p>Overview of major Stock Exchanges in India – NSE, BSE. Meaning, purpose and consideration in developing index – Methods (Weighted Aggregate Value Method, Weighted Average of Price Relatives method, Free Float method). Trading on Stock Exchanges: Brokers – types of brokers. Types of market orders. Different trading systems – BOLT and NEAT System. Trading cycle (T+2), types of settlements. Pay–in and pay-out, Bad Delivery, Short delivery, Auction, Demat settlement, Physical settlement. Circuit Breakers, market makers.</p></li><li><b>Unit 2: Leasing and Hire Purchase</b><p>Leasing definition, types and main Features. Advantages and disadvantages of Leasing. Main clauses in a Lease agreement. Buy or Lease decision -- Tax and Depreciation aspects. Lease Evaluation -- Lessee’s perspective, Lessor’s perspective. Major Leasing Institutions in India.</p><p>Hire Purchase—Concepts and features, Hire Purchase Evaluation -- Tax and depreciation implications. Choice between Leasing and Hire Purchase. Installment purchase, difference between hire purchase and installment purchase.</p></li><li><b>Unit 3 : Mutual Funds, Credit Rating and Securitization</b><p>Mutual Funds – Definition and historical background. Types of Mutual Funds. Advantages and disadvantages of mutual funds. Process of establishing a mutual – Trustee, Sponsor, Asset Management Company, Custodian. Entry and exit load, concept of NAV and its calculations. Systematic Investment Plan (SIP), Systematic Withdrawal Plan (SWP). Mutual Fund industry in India. Regulations relating to mutual funds.</p><p>Credit Rating -Definition and meaning. Process of credit rating of financial instruments. Rating Methodology, Rating agencies. Rating symbols of different companies. Advantages and disadvantages of credit rating.</p></li><li><b>Unit 4: Factoring, Forfeiting and Bill Discounting</b><p>Factoring definition. Types of factoring services-- With recourse and Without Recourse factoring, Domestic Factoring and International Factoring. Export factor, Import factor. Single factor system, Direct Export Factoring System, Direct Import Factoring System. Fees Involved In Factoring-- Finance Charge, Service Fee. Advantages and disadvantages of Factoring.</p><p>Bill Discounting- Definition, nature, importance. Types of bill discounting. Bill discounting v/s Factoring. Bill rediscounting.</p><p>Forfaiting Definition, nature, and importance of forfaiting. Mechanism of Forfaiting Transaction. Fees Involved in Forfaiting-- Discount fees, Commitment fees. Advantages and disadvantages of Forfaiting. Differences Between Factoring and Forfaiting.</p><p>Numerical problems on – Leasing, Hire Purchase, Factoring, Forfaiting, Bill Discounting and NAV Calculations of Mutual Funds.</p></li></ol>
+        <h4>Textbooks (Latest Editions)</h4>
+        <ol class="pts"><li>Meir Kohn, Financial Institutions and Markets, Tata McGraw-Hill, New Delhi.</li><li>Frank.J.Fabozzi &amp; Franco Modigliani, Foundations of Financial Markets and Institutions, Pearson Education Asia.</li><li>M.Y.Khan, Financial Services, Tata McGraw-Hill, New Delhi.</li><li>M. Y. Khan, Indian Financial System, Tata Mc Graw-Hill, New Delhi.</li><li>H.R Machiraju, Indian Financial Systems, Vikas Publishing House Pvt. Ltd.</li><li>B. Pathak : Indian Financial Systems Pearson Education</li></ol>
+        <h4>Course Learning Outcomes</h4>
+        <p class="cdesc">Upon completion of the course students should be</p>
+        <ol class="pts"><li>Define key terms such as lease agreement, hire purchase agreement, factoring, forfaiting, bill of exchange, mutual fund types, and credit rating agencies.</li><li>explain how a leasing arrangement works, the stages involved in hire purchase, and the role of credit rating agencies in financial markets.</li><li>evaluate the pros and cons of using factoring versus forfaiting for managing a company&#x27;s receivables and recommend the most suitable option for a given business situation.</li><li>Analyse the various types of mutual funds available in the financial markets, evaluate their performance metrics</li></ol>
         <h4>Faculty</h4>
         <p class="books">A. Shruti</p>
       </div>
     </details>
 
-    <!-- ======== MARKETING: CONSUMER BEHAVIOUR ======== -->
     <details class="course" data-track="mkt">
-      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-01</span><span class="ctitle">Consumer Behaviour</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-01</span><span class="ctitle">Consumer Behaviour</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">A comprehensive study of consumer behavioural concepts and models to understand, evaluate and predict consumer behaviour — and translate the complexities of consumer decision-making into effective marketing strategy in the Indian context.</p>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Understanding Consumer Behaviour</b>
-            <p>Introduction to consumer behaviour; consumer behaviour and the marketing concepts; value and the consumer-behaviour framework; online consumer behaviour; organizational buying behaviour; consumerism.</p></li>
-          <li><b>2 · External Influences</b>
-            <p>Lifestyles and psychographics on buying behaviour; social class and group influence — reference-group and family influence on buying behaviour; influence of culture on consumer behaviour.</p></li>
-          <li><b>3 · Internal Influences</b>
-            <p>Consumer perception; consumer learning, memory and involvement; dynamics of consumer motivation; consumer personality; consumer attitudes and attitude change.</p></li>
-          <li><b>4 · Consumer Decision Making</b>
-            <p>Concept of consumer decision; situational influences on decisions; the decision-making process — need recognition and search, alternative evaluation and choice, post-purchase behaviour; models of consumer decision making.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">Schiffman, Kanuk &amp; Kumar — <i>Consumer Behavior</i> (Pearson) · Loudon &amp; Della Bitta — <i>Consumer Behavior: Concepts &amp; Applications</i> · Babin, Harris &amp; Mohan — <i>CB: A South Asian Perspective</i> (Cengage) · Hawkins, Best &amp; Coney — <i>Consumer Behavior: Building Marketing Strategy</i> · Solomon — <i>Consumer Behavior: Buying, Having and Being</i> · Evans, Jamal &amp; Foxall — <i>Consumer Behavior</i> (Wiley) · Nair — <i>Consumer Behavior &amp; Marketing Research</i>.</p>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Develop a better understanding of consumer-behaviour concepts and models</li>
-          <li>Draw insights from the consumer purchase-decision process</li>
-          <li>Develop appropriate marketing strategies for different consumer segments</li>
-        </ul>
+        <h4>Course Objective(s)</h4>
+        <p class="cdesc">A comprehensive study of consumer behavioral concepts and models designed to help understand, evaluate, and predict consumer behavior. The course also deepens a student’s knowledge to understand the complexities of consumer decision-making and accordingly translate them into effective marketing strategies in the Indian Context.</p>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Understanding Consumer Behavior</b><p>Introduction to Consumer Behavior; Consumer Behavior and the Marketing Concepts; Value and the Consumer Behavior Framework; Online Consumer Behavior. Organizational Buying Behavior; Consumerism.</p></li><li><b>Unit 2: External Influences on Consumer Behavior</b><p>Lifestyles and Psychographics on Buying Behavior; Social Class and Group Influence on Consumer Behavior – Reference Group and Family Influence on Buying Behavior; Influence of Culture on Consumer Behavior</p></li><li><b>Unit 3: Internal Influences on Consumer Behavior</b><p>Consumer Perception; Consumer Learning, Memory and Involvement; Dynamics of Consumer Motivation; Consumer Personality; Consumer Attitudes and Attitude Change.</p></li><li><b>Unit 4: Consumer Decision Making</b><p>Concept of Consumer Decision; Situational Influence on Consumer’s Decision; Consumer Decision Making Process – Need Recognition and Search, Alternative Evaluation and Choice, Post-purchase Behavior; Different Models of Consumer Decision Making.</p></li></ol>
+        <h4>Text Books / References: (Latest Edition)</h4>
+        <ol class="pts"><li>Schiffman, L. G.; Kanuk L. L.and Kumar,S. R. Consumer Behavior. Pearson Education Inc.</li><li>Loudon, D. L. and Bitta, J. Albert Della. Consumer Behavior; Concepts and Applications. Tata McGraw Hill Publishing Company Limited</li><li>Babin, B.J.; Harris, E.G. and Mohan, Ashutosh. Consumer Behavior (CB): A South Asian Perspective. Cengage Learning India Pvt. Limited</li><li>Hawkins, D. I.; Best, R. J. and Coney, K. A. Consumer Behavior: Building Marketing Strategy. Tata McGraw-Hill Publishing Company Limited.</li><li>Evans, M.; Jamal, A. and Foxall, G. Consumer Behavior, John Wiley &amp; Sons LTD.</li><li>Solomon, M. R. Consumer Behavior Buying, Having and Being. PHI Learning Private Limited</li><li>Nair, S. R. Consumer Behavior Consumer Behavior &amp; Marketing Research. Himalaya Pub. House.</li></ol>
+        <h4>Course Outcome(s)</h4>
+        <ol class="pts"><li>Develop a better understanding of concepts and models of consumer behavior.</li><li>It can provide insights for the consumer purchase decision process.</li><li>Able to develop appropriate marketing strategies for different segments of consumers</li></ol>
         <h4>Faculty</h4>
         <p class="books">Hema Sharma</p>
       </div>
     </details>
 
-    <!-- ======== MARKETING: MARKETING OF SERVICES ======== -->
     <details class="course" data-track="mkt">
-      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-04</span><span class="ctitle">Marketing of Services</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag mkt">Marketing</span><span class="ccode">DSE-MR-04</span><span class="ctitle">Marketing of Services</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">Why services need a marketing discipline of their own, the challenges they pose and how to deal with them — set against the emerging service environment in India and the world, with concepts and techniques for real services-marketing decisions.</p>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Understanding Services, Service Consumers &amp; Managing Service Quality</b>
-            <p>Difference between goods and services marketing; challenges of services marketing; role of internal and interactive marketing; services marketing myopia; the expanded services marketing mix; levels of service expectations; factors influencing consumers' perception of service; types and determinants of service quality; the Gap Model of service quality; the SERVQUAL instrument; service-quality research.</p></li>
-          <li><b>2 · Service as Product, Delivery Process &amp; Pricing</b>
-            <p>Core, facilitating and support services; levels of customer participation in service creation and strategies to enhance it; service blueprinting and its benefits; customer-service standards; managing demand fluctuations in creation and delivery; service-delivery intermediaries; setting service prices — costs, perceived value and competition; revenue management in specific industries; pricing concepts — price bundling, captive pricing, two-part pricing, loss-leader pricing, result-based pricing; price-competition challenges.</p></li>
-          <li><b>3 · Service Communication, Branding &amp; Physical Evidence</b>
-            <p>Challenges in designing communication programmes for services; service communication problems; matching service promises with delivery; services advertising; role of promotion; the servicescape — roles it plays and its effects; environmental dimensions of the servicescape; high-contact vs low-contact services; approaches for understanding servicescape effects.</p></li>
-          <li><b>4 · Service Failures, Recovery, People &amp; Customer Relationships</b>
-            <p>Service failures; recovery strategies and tactics; the service guarantee and its role in achieving quality; customer feedback systems; HR strategies for customer-oriented delivery; internal marketing — delivering the promise made through external marketing; interactive marketing — managing the moments of truth; guidelines for people in service organizations; service-oriented organizational structure; customer loyalty, customer lifetime value, customer equity; a framework for building loyalty.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">Zeithaml, Gremler, Bitner &amp; Pandit — <i>Services Marketing</i> (7e, TMH) · Wirtz, Lovelock &amp; Chatterjee — <i>Services Marketing</i> (9e, World Scientific) · Bordoloi, Fitzsimmons &amp; Fitzsimmons — <i>Service Management</i> (10e) · Hoffman &amp; Bateson — <i>Services Marketing: Concepts, Strategies &amp; Cases</i> (5e).</p>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Understand the concept of services and intangible products</li>
-          <li>Discuss the relevance of the services industry and examine its characteristics</li>
-          <li>Analyse the role and relevance of quality in services</li>
-          <li>Visualize future changes in the services industry</li>
-        </ul>
+        <h4>Course Objective(s)</h4>
+        <p class="cdesc">The basic aim of this course is to explain why there is a need for special services marketing discipline, the challenges for services marketing, and how to deal with them. The course brings out the emerging service environment in India and the world. It emphasises the distinctive aspects of Services Marketing. It aims at equipping students with concepts and techniques that help in taking decisions relating to various services marketing situations.</p>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Understanding Services, Service Consumers and Managing Services Quality</b><p>Difference between goods and services marketing; Challenges of Services Marketing; Role of internal and interactive marketing in services; Services Marketing Myopia, Expanded Services Marketing mix; Levels of service expectations; Factors influencing Consumers’ perception of service; Different types of Service Quality; Determinants of Service Quality; Gap Model of Service Quality; Servqual instrument to measure service quality; Service quality research.</p></li><li><b>Unit 2: Service as Product, Service Delivery Process and Service Pricing</b><p>Distinction between core, facilitating, and support services; Different levels of customer participations in the creation of service and the strategies to enhance the customer participation in service production and delivery; Service blueprinting and its benefits; Customer Service standards; Strategies to manage fluctuations of demand in the creation and delivery of services; Service delivery intermediaries; Setting up Service prices- costs, perceived value and competition; Revenue Management in specific service industries; Pricing concepts- price bundling, captive pricing, two-part pricing, loss-leadership pricing and result-based pricing; Price competition challenges.</p></li><li><b>Unit 3: Service Communication, Branding, Physical Evidence in Service</b><p>Challenges in designing communication programme for services; Service communication problems; Strategies for matching service promises with delivery; Services advertising; Role of promotion in marketing of services; Servicescape, the roles played by the servicescape, and its effects; Environmental dimensions of servicescape; High-contact and Low-contact ; Approaches for understanding servicescape effects.</p></li><li><b>Unit 4: Service Failures, Recovery Strategies, Managing People and Customer Relationships</b><p>Service failures; strategies and tactics of service recovery in the event of a service failure; service guarantee and its role in promoting and achieving service quality; customer feedback system; human resource strategies for customer oriented service delivery; internal marketing in delivering the promise made to customers (through external marketing); interactive marketing (managing the moments of truth); guideline for people in service organizations ; service oriented organizational structure; customer loyalty; customer lifetime value ; customer equity; framework for building customer loyalty.</p></li></ol>
+        <h4>Text Books (Latest Edition)</h4>
+        <ol class="pts"><li>Services Marketing: V Zeithaml, Gremler, Bitner and Ajay Pandit, 7 th Edition TMH,2018</li><li>Services Marketing: Jochen Wirtz, Christopher H. Lovelock &amp; Jayanta Chatterjee 9th Edition; Published by World Scientific, 2023</li><li>Service Management: Operations, Strategy, Information Technology, Sanjeev Bordoloi, James Fitzsimmons and Mona Fitzsimmons 10th Edition ISBN10: 1264098359 | ISBN13: 9781264098354 © 2023</li><li>Services Marketing: Concepts, Strategies &amp; Cases K. Douglas Hoffman | John E.G. Bateson ISBN: 9789386858771 Edition: 5th © Year: 2017</li></ol>
+        <h4>Course Outcome(s)</h4>
+        <p class="cdesc">At the end of this course, students would be able to:</p>
+        <ol class="pts"><li>Understand the Concept of Services and intangible products</li><li>Discuss the relevance of the services Industry to Industry.</li><li>Examine the characteristics of the services industry.</li><li>Analyse the role and relevance of Quality in Services</li><li>Visualize future changes in the Services Industry</li></ol>
         <h4>Faculty</h4>
         <p class="books">Dr. S.K. Biswal</p>
       </div>
     </details>
 
-    <!-- ======== HR: TEAM BUILDING ======== -->
     <details class="course" data-track="hr">
-      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-08</span><span class="ctitle">Team Building in the Organizations</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-08</span><span class="ctitle">Team Building in the Organizations</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">The skill and the will to work in teams — managing yourself as an effective team member, knowing a group from a team, and collaborating across online and offline teams to weed out dysfunctional behaviour.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Understand the difference between a group and a team</li>
-          <li>Recognise functional and dysfunctional team behaviour</li>
-          <li>Understand what makes an effective team leader</li>
-          <li>Build collaborative behaviour within teams</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · Why Groups &amp; Teams</b>
-            <p>Stages of team development — navigating, surviving and reorganizing through norming, storming, performing and reorganizing; why some teams pull together and some do not.</p></li>
-          <li><b>2 · Sustaining High Performance &amp; Effective Team Members</b>
-            <p>Goals of Stage 4 — getting the work done; managing cohesion and conflict; making team decisions; how high-performance teams function — goals, roles, norms, decisions, communication and feedback, cooperation and conflict management; avoiding blame-game politics; supporting leaders and handling dysfunctional team members; intra-group and inter-group dynamics.</p></li>
-          <li><b>3 · Developing Teams &amp; Dealing with Virtual Teams</b>
-            <p>Structure, organizational culture and team support; types of teams and developing yourself as a team member; evaluating team-member development; in-group/out-group dynamics; virtual teams — working through all phases of team development; conflict and collaboration in virtual teams.</p></li>
-          <li><b>4 · Effective Team Leadership &amp; Organizational Support</b>
-            <p>Leadership at different stages of team development; leadership and team-building style; teams and groups in organizations; building complementary team members; avoiding too much help as a leader; team autonomy and the organizational-support audit.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books">Wheelan — <i>Creating Effective Teams</i> (Sage) · Sinek — <i>Leaders Eat Last</i> · Clifton — <i>Team Management</i> · Forsyth — <i>Group Dynamics</i> (6e, Cengage) · Lencioni — <i>The Five Dysfunctions of a Team</i>. Practical exercise: watch and review the film <i>Lagaan</i>.</p>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Analyse the stages of team formation and develop team-building skills</li>
-          <li>Evaluate and manage conflict and collaboration in teams</li>
-          <li>Rearrange team formation for conflict resolution</li>
-          <li>Demonstrate being an effective team member in real teams</li>
-        </ul>
+        <h4>Course Description</h4>
+        <p class="cdesc">The course provides skill and the will to work in teams. Knowledge of managing self in teams as an effective team member, while also know the difference between a group and a team is important. Dealing with online and offline teams and collaborating together to weed out dysfunctional behaviour is what will aid the students of this course.</p>
+        <h4>Course Objective(s)</h4>
+        <ol class="pts"><li>To Understand difference between Group and team</li><li>To sensitize students to functional and dysfunctional team behaviour</li><li>Enable understanding of being an effective Team leader</li><li>Understand collaborative team behaviour in teams</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit 1: Why Groups and Teams</b><p>Stages of Team Development; Navigating, surviving, reorganizing Norming, Storming, Performing, Reorganizing. *Why some team Pull together and Some do not</p></li><li><b>Unit 2: Sustaining High Performance &amp; Effective team Members</b><p>Goals of Stage 4; Getting the work done Managing Cohesion and Conflict, Making team decisions. How do High Performance Teams Function? Goals, Roles, Norms, Decisions, Communication and Feedback, Cooperation and Conflict Management;Blame game Politics avoided, Norms and goals; Support the leaders and Dysfunctional team members, Intra-Group and Inter group Dynamics.</p></li><li><b>Unit 3: Developing teams and dealing with virtual teams</b><p>Structure, Culture of Organization an team support, Types of teams and managing and developing as team member. Evaluating team members development Process, In group out group team dynamics, Virtual teams and working through all the phases of team development, Conflict, Collaboration in virtual teams</p></li><li><b>Unit 4: Effective Team Leadership and Effective Organizational Support</b><p>Leadership in different stage of team development; Leadership and team building style; Teams and groups on organizations, Building complimentary team members, Avoid too much help as a leader, Team autonomy and Organizational support audit.</p></li></ol>
+        <h4>Text Books (Latest Edition)</h4>
+        <ol class="pts"><li>1.Creating Effective Teams, Susan A. Wheelan, Sage South Asia Edition</li><li>Leaders Eat Last by Simon Sinek</li><li>TEAM MANAGEMENT Paperback – 5 December 2019</li><li>Forsyth, D. R. (2018). Group Dynamics. (6th ed.). Cengage Learning,</li><li>Delhi.by Alan Clifton, Rupa Publications</li><li>The Five Dysfunctions of a Team Patrick Lencioni</li></ol>
+        <h4>Practical Exercise</h4>
+        <ol class="pts"><li>See and review Film : Lagaan</li></ol>
+        <h4>Course Outcome(s)</h4>
+        <p class="cdesc">At the end of this course students will be able to:</p>
+        <ol class="pts"><li>Analyse the Stages of team formation and develop team building skill</li><li>Evaluate and manage conflict and collaboration in teams</li><li>Rearrange team formation for conflict resolution in teams</li><li>Demonstrate ways of being an effective team member in real teams</li></ol>
         <h4>Faculty</h4>
         <p class="books">Gayatri Kurup</p>
       </div>
     </details>
 
-    <!-- ======== HR: COACHING & MENTORING ======== -->
     <details class="course" data-track="hr">
-      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-13</span><span class="ctitle">Coaching &amp; Mentoring</span><span class="ccred">3L:1T:0P · 4 cr</span></summary>
+      <summary><span class="ctag hr">HR</span><span class="ccode">DSE-HRM-13</span><span class="ctitle">Coaching and Mentoring</span><span class="ccred">3L:1T:0P · 4 Credits</span></summary>
       <div class="cbody">
-        <p class="cdesc">The process of coaching and mentoring and the difference between the two — the attributes of a coaching mindset, how a manager develops coachability, and how to create a coaching-friendly context with real coaches and mentees.</p>
-        <h4>Objectives</h4>
-        <ul class="pts">
-          <li>Develop understanding of the coaching process</li>
-          <li>See mentoring as a developmental relationship</li>
-          <li>Understand coachability and the coaching mindset</li>
-          <li>Create real coaching and mentoring contexts</li>
-        </ul>
-        <h4>Units</h4>
-        <ol class="units">
-          <li><b>1 · The Coaching Manager &amp; Developmental Coaching</b>
-            <p>Coaching helps employees who want to learn — so why don't more managers coach? Developmental coaching and learning; the coaching manager and emotional intelligence; the difference between coaching and mentoring; how your approach to coaching determines outcomes; a simple model of developmental coaching; the coaching mindset, the coachable learner, the coaching mirror.</p></li>
-          <li><b>2 · Coaching Mindset, Coachability &amp; the Coaching-Friendly Context</b>
-            <p>Can anyone learn to coach? The question of coachability and hallmarks of the coachable learner; impression management; barriers to coaching. Defining a coaching-friendly context; high-performance organizations and coaching; protecting the context and seizing opportunities to coach; working with (or without) a competency model; the coaching manager as teacher and observer; using strengths; data vs behaviour; the role of the coachee.</p></li>
-          <li><b>3 · Balanced Feedback &amp; Collaborative Goal-Setting</b>
-            <p>Feedback and its problems; the basics of balanced feedback; the coaching dialogue and root cause; individual and team factors; cultural diversity and the importance of getting it right; treating career and performance problems as coaching opportunities; can coaching be delegated — and will technology help?</p></li>
-          <li><b>4 · Mentoring — Film &amp; Book Review</b>
-            <p>Evolution, concept and wherewithal of mentoring; the mentor process and gender differences in mentoring. Book review — <i>Tuesdays with Morrie</i> (Mitch Albom); film review — <i>Bhaag Milkha Bhaag</i>, for the difference between mentoring and coaching.</p></li>
-        </ol>
-        <h4>Core texts</h4>
-        <p class="books"><i>The Coaching Manager: Developing Top Talent in Business</i> (Sage) · <i>The Complete Handbook of Coaching</i> (Sage) · Kimsey-House et al. — <i>Co-Active Coaching</i> · Bungay Stanier — <i>The Coaching Habit</i> · Joshi &amp; Vohra — <i>Talent Management</i>, ch. 7 (Cengage).</p>
-        <h4>Outcomes</h4>
-        <ul class="pts">
-          <li>Analyse the difference between coaching and mentoring</li>
-          <li>Describe and develop a coaching mindset</li>
-          <li>Practise developmental coaching</li>
-          <li>Provide feedback tied to development goals</li>
-        </ul>
+        <h4>Course Description</h4>
+        <p class="cdesc">The course describes the process of coaching and mentoring, deals with the difference between the two. What are the attributes of a coaching mindset and a coaching manager and how does a manager develop coach ability. How to start a coaching friendly context and devop coaching and mentoring skills is an important takeaway of this course.</p>
+        <h4>Course Objective(s)</h4>
+        <ol class="pts"><li>To develop understanding of the Coaching Process</li><li>To sensitize students towards developmental relationship of mentoring</li><li>Understand Coachability and coaching mindset</li><li>Learn Create coaching and mentoring contexts with real coaches and mentees</li></ol>
+        <h4>Course Content</h4>
+        <ol class="units"><li><b>Unit1: Introduction to the Coaching Manager &amp; Developmental Coaching</b><p>Coaching helps employees who want to learn. Why don’t more managers coach? Developmental coaching and Learning; Coaching Manager and Emotional Intelligence Difference between Coaching and Mentoring. Making it work and approach to coaching determines the outcomes of your work. Simple Model of Developmental coaching; Coaching Mindset, Coachable learner, Coaching Mirror</p></li><li><b>Unit 2: Coaching Manager, Coaching Mindset and Coach Ability Creating a Coaching Friendly Context, and Starting a Dialogue</b><p>Do we run a business? The manager who learns to coach. Can any one learn to coach? Coaching Mindset, The question of Coachability. Hallmarks of coachable leaner, Impression management; Barriers to coaching</p><p>Definition of Coaching Friendly Context. High Performance organization and Coaching Friendly Context. Protecting a coaching Context. Seizing opportunities to coach. Focussing on what is important. Looking at the competency model, what if there is no competency model? Coaching Manager as a teacher, using the strengths. Is data Important or behaviour? Role of a coachee. Coaching manager as an observer.</p></li><li><b>Unit 3: Providing Balanced and Helpful feedback with Collaborative Goal setting follow up</b><p>Feedback, problems of feedback, Basics of Balanced feedback; Coaching Dialogue and root cause, Individual team factors, Cultural diversity and Importance of getting it right. Looking at career, performance problems as coaching opportunities. Epilogue to Coaching-Can coaching be delegated? Will technology help?</p></li><li><b>Unit 4: Mentoring-Film- and Book Review</b><p>Evolution of Mentoring, concept and wherewithal of Mentoring Mentor Process and gender differences in mentoring</p><p>Book- Tuesday with Morrie-Book Review, Show Film Bhag Milkha Bhag Review for difference in Mentoring and coaching</p></li></ol>
+        <h4>Text Books (Latest Edition)</h4>
+        <ol class="pts"><li>1.The Coaching Manager Developing Top talent in Business. Sage South East Asia Edition</li><li>The Complete Handbook of Coaching. Sage Publication</li><li>Co-Active Coaching by Henry Kimsey-House, Karen Kimsey-House, Phillip Sandahl and Laura Whitworth</li><li>4.The Coaching Habit, Michael Bungay Stanier</li><li>Chapter 7, Talent Management</li><li>Author(s): Gowri Joshi | Veena Vohra,Cengage Learning</li></ol>
+        <h4>References / Practical Exercises</h4>
+        <ol class="pts"><li>Film: Bhag Milkha Bhag</li><li>Tuesdays with Morrie, by Mitch Albom</li></ol>
+        <h4>Course Outcome(s)</h4>
+        <p class="cdesc">At the end of this course students will be able to :</p>
+        <ol class="pts"><li>Analyse the difference between Coaching and Mentoring</li><li>Describe and develop a coaching Mindset</li><li>Practice Developmental coaching</li><li>Provide feedback with development goals</li></ol>
         <h4>Faculty</h4>
         <p class="books">Srikant Panda</p>
       </div>
     </details>
 
-    <p class="cnote" style="margin-top:14px">Codes, titles, unit contents, texts and outcomes are from the AICTE BBA (NEP-2020) Model Curriculum, Semester V — common cores CC501–CC502 and the Discipline-Specific Electives our tracks take. Codes shown match the abbreviations RIMS prints on the timetable. Unit scope and evaluation pattern can differ in practice — verify with your faculty and the official university syllabus before exams.</p>
+    <p class="cnote" style="margin-top:14px">Reproduced verbatim from the AICTE Model Curriculum for UG Degree in BBA (NEP-2020), Semester V &mdash; common cores CC 501&ndash;CC 502 and the Discipline-Specific Electives our tracks take. Wording, numbering and readings are exactly as printed in the source document. Codes shown match the abbreviations RIMS prints on the timetable. Unit scope and evaluation pattern can differ in practice &mdash; verify with your faculty and the official university syllabus before exams.</p>
   </div>
 </section>
+
 <script>
   function filt(t){
     document.querySelectorAll('#filter button').forEach(function(b){
