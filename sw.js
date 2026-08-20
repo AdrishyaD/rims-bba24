@@ -1,5 +1,5 @@
 /* RIMS BBA '24 — service worker (offline app shell) */
-const CACHE = 'rimsbba24-v4';
+const CACHE = 'rimsbba24-v5';
 const ASSETS = [
   '/', '/index.html', '/syllabus.html', '/internship.html', '/project.html',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png',
@@ -27,6 +27,8 @@ self.addEventListener('fetch', function (e) {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // let cross-origin (fonts) hit network
+  // never intercept or cache Vercel analytics / insights endpoints
+  if (url.pathname.startsWith('/_vercel/')) return;
 
   const isPage = req.mode === 'navigate' ||
     (req.headers.get('accept') || '').includes('text/html');
