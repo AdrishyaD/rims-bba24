@@ -275,6 +275,16 @@
   .ameta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
   .ameta span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--common-bg);border-radius:3px;padding:4px 9px;color:#33383f}
   .ameta span b{font-weight:700;color:var(--ink)}
+
+  /* ---- assignment badge (top) ---- */
+  .abadge{display:inline-flex;align-items:center;gap:9px;font-family:"JetBrains Mono",monospace;
+    font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    background:var(--rail);color:#f4f5f4;border-radius:20px;padding:8px 15px;
+    text-decoration:none;animation:aglow 1.8s ease-in-out infinite;transition:transform .15s}
+  .abadge:hover{transform:translateY(-1px)}
+  .abadge .aarr{color:#e05252}
+  @keyframes aglow{0%,100%{box-shadow:0 0 0 0 rgba(224,82,82,.4)}55%{box-shadow:0 0 0 7px rgba(224,82,82,0)}}
+  @media(prefers-reduced-motion:reduce){.abadge{animation:none}}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
@@ -289,23 +299,7 @@
 </nav>
 <div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference &mdash; always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
 
-<section id="assignments">
-  <div class="awrap">
-    <div class="assign">
-      <div class="ah"><span class="adot"></span><span class="alab">Assignment &middot; Active</span><span class="adue">Due Mon 26 Oct</span></div>
-      <div class="ab">
-        <div class="atitle">LSCM &mdash; Supply Chain Process of a Company / Your Own Venture</div>
-        <p class="abrief">Draw and analyze the supply chain process of a company &mdash; or of a new venture introducing your own company idea &mdash; describe the supply chain process, and discuss the challenges &amp; solutions to make the supply chain more effective &amp; efficient.</p>
-        <div class="ameta">
-          <span><b>CC 502 LSCM</b> &middot; S. Jena</span>
-          <span>Due <b>Mon, 26 Oct 2026</b></span>
-          <span>Softcopy <b>&amp;</b> hardcopy accepted</span>
-        </div>
-        <p class="cnote" style="margin-top:10px">Transcribed from the brief noted in class &mdash; verify the exact wording, format and deadline with faculty.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="awrap" style="padding-top:18px"><a class="abadge" href="#assignments" aria-label="Jump to assignment details"><span class="adot"></span><span>1 Assignment due &middot; LSCM &middot; Mon 26 Oct</span><span class="aarr">&darr;</span></a></div>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Rourkela Institute of Management Studies</div>
@@ -374,6 +368,26 @@
 })();
 </script>
 
+<section id="assignments">
+  <div class="wrap">
+    <div class="shead" style="padding-top:clamp(32px,5vw,52px)"><span class="snum">01a</span><h2>Assignments</h2></div>
+    <p class="ssub">Active assignments as noted in class &mdash; verify the exact brief, format and deadline with faculty.</p>
+    <div class="assign">
+      <div class="ah"><span class="adot"></span><span class="alab">Assignment &middot; Active</span><span class="adue">Due Mon 26 Oct</span></div>
+      <div class="ab">
+        <div class="atitle">LSCM &mdash; Supply Chain Process of a Company / Your Own Venture</div>
+        <p class="abrief">Draw and analyze the supply chain process of a company &mdash; or of a new venture introducing your own company idea &mdash; describe the supply chain process, and discuss the challenges &amp; solutions to make the supply chain more effective &amp; efficient.</p>
+        <div class="ameta">
+          <span><b>CC 502 LSCM</b> &middot; S. Jena</span>
+          <span>Due <b>Mon, 26 Oct 2026</b></span>
+          <span>Softcopy <b>&amp;</b> hardcopy accepted</span>
+        </div>
+        <p class="cnote" style="margin-top:10px">Transcribed from the brief noted in class &mdash; verify the exact wording, format and deadline with faculty.</p>
+      </div>
+    </div>
+  
+  </div>
+</section>
 <section id="faculty">
   <div class="wrap">
     <div class="shead" style="padding-top:clamp(32px,5vw,52px)"><span class="snum">01b</span><h2>Subjects &amp; faculty</h2></div>

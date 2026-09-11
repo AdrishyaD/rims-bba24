@@ -260,14 +260,7 @@
     border-radius:5px;padding:13px 15px;color:#f0dcdc;font-size:12.5px;line-height:1.7}
   .fillnote b{color:#fff;font-weight:700}
 
-  /* ---- holidays table ---- */
-  .holcard{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow-x:auto}
-  table.hol{width:100%;border-collapse:collapse;font-size:13.5px;min-width:640px}
-  .hol th{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px 14px;background:var(--rail);color:#f4f5f4;white-space:nowrap}
-  .hol td{padding:9px 14px;border-top:1px solid var(--line);vertical-align:top}
-  .hol td.mo{font-family:"Fraunces",serif;font-weight:600;white-space:nowrap}
-  .hol td.dt{font-family:"JetBrains Mono",monospace;font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap}
-  .hol td.dy,.hol td.un{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);white-space:nowrap}
+
   .st{font-family:"JetBrains Mono",monospace;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;border-radius:2px;padding:2px 7px;white-space:nowrap}
   .st.h{background:var(--fin-bg);color:var(--fin)}
   .st.o{background:var(--common-bg);color:var(--common)}
@@ -296,41 +289,18 @@
       <span><b>5</b> Observe</span>
       <span>Issued <b>01 Jan 2026</b></span>
     </div>
-    <div class="holcard">
-      <table class="hol">
-        <thead><tr><th>Month</th><th>Date</th><th>Day</th><th>Particulars</th><th>Status</th><th>University</th></tr></thead>
-        <tbody>
-        <tr><td class="mo" rowspan="4">January</td><td class="dt">01.01.2026</td><td class="dy">THU</td><td>New Year Day</td><td><span class="st o">Observe</span></td><td class="un">&mdash;</td></tr>
-        <tr><td class="dt">14.01.2026</td><td class="dy">WED</td><td>Makar Sankranti</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">23.01.2026</td><td class="dy">FRI</td><td>Subhash Chandra Bose Jayanti / Veer Surendra Sai Jayanti / Basanta Panchami</td><td><span class="st o">Observe</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">26.01.2026</td><td class="dy">MON</td><td>Republic Day</td><td><span class="st o">Observe</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="4">March</td><td class="dt">03.03.2026</td><td class="dy">TUE</td><td>Dola Purnima</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">04.03.2026</td><td class="dy">WED</td><td>Holi</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">21.03.2026</td><td class="dy">SAT</td><td>Id-Ul-Fitre</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">27.03.2026</td><td class="dy">FRI</td><td>Shree Rama Navami</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="3">April</td><td class="dt">01.04.2026</td><td class="dy">WED</td><td>Utkal Divas</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">03.04.2026</td><td class="dy">FRI</td><td>Good Friday</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">14.04.2026</td><td class="dy">TUE</td><td>Maha Vishuva Sankranti &amp; Dr. B.R. Ambedkar Jayanti</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="2">May</td><td class="dt">16.05.2026</td><td class="dy">SAT</td><td>Sabitri Amabasya</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">27.05.2026</td><td class="dy">WED</td><td>Id-Ul-Zuha</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="2">June</td><td class="dt">15.06.2026</td><td class="dy">MON</td><td>Raja Sankranti</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">26.06.2026</td><td class="dy">FRI</td><td>Muharram</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="1">July</td><td class="dt">16.07.2026</td><td class="dy">THU</td><td>Ratha Yatra</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="3">August</td><td class="dt">15.08.2026</td><td class="dy">SAT</td><td>Independence Day</td><td><span class="st o">Observe</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">26.08.2026</td><td class="dy">WED</td><td>Birthday of Prophet Muhammad</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">27.08.2026</td><td class="dy">THU</td><td>Jhulana Purnima / Raksha Bandhan</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="4">September</td><td class="dt">04.09.2026</td><td class="dy">FRI</td><td>Janmastami</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">14.09.2026</td><td class="dy">MON</td><td>Ganesh Puja</td><td><span class="st o">Observe</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">15.09.2026</td><td class="dy">TUE</td><td>Nuakhai</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">16.09.2026</td><td class="dy">WED</td><td>Day following Nuakhai</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="4">October</td><td class="dt">02.10.2026</td><td class="dy">FRI</td><td>Gandhi Jayanti</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">17.10.2026</td><td class="dy">SAT</td><td>Mahasaptami</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">19.10.2026</td><td class="dy">MON</td><td>Mahanavami</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="dt">20.10.2026</td><td class="dy">TUE</td><td>Vijaya Dasami</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="1">November</td><td class="dt">24.11.2026</td><td class="dy">TUE</td><td>Rahas Purnima / Kartik Purnima</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        <tr><td class="mo" rowspan="1">December</td><td class="dt">25.12.2026</td><td class="dy">FRI</td><td>X-Mas Day</td><td><span class="st h">Holiday</span></td><td class="un">BPUT, SU</td></tr>
-        </tbody>
-      </table>
+    <div class="grid">
+<div class="day"><h3>January<small>4 days</small></h3><div class="slot"><div class="time">01.01<br>THU</div><div class="les"><div class="row1"><b>New Year Day</b> <span class="st o">Observe</span></div></div></div><div class="slot"><div class="time">14.01<br>WED</div><div class="les"><div class="row1"><b>Makar Sankranti</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">23.01<br>FRI</div><div class="les"><div class="row1"><b>Subhash Chandra Bose Jayanti / Veer Surendra Sai Jayanti / Basanta Panchami</b> <span class="st o">Observe</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">26.01<br>MON</div><div class="les"><div class="row1"><b>Republic Day</b> <span class="st o">Observe</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>March<small>4 days</small></h3><div class="slot"><div class="time">03.03<br>TUE</div><div class="les"><div class="row1"><b>Dola Purnima</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">04.03<br>WED</div><div class="les"><div class="row1"><b>Holi</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">21.03<br>SAT</div><div class="les"><div class="row1"><b>Id-Ul-Fitre</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">27.03<br>FRI</div><div class="les"><div class="row1"><b>Shree Rama Navami</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>April<small>3 days</small></h3><div class="slot"><div class="time">01.04<br>WED</div><div class="les"><div class="row1"><b>Utkal Divas</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">03.04<br>FRI</div><div class="les"><div class="row1"><b>Good Friday</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">14.04<br>TUE</div><div class="les"><div class="row1"><b>Maha Vishuva Sankranti &amp; Dr. B.R. Ambedkar Jayanti</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>May<small>2 days</small></h3><div class="slot"><div class="time">16.05<br>SAT</div><div class="les"><div class="row1"><b>Sabitri Amabasya</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">27.05<br>WED</div><div class="les"><div class="row1"><b>Id-Ul-Zuha</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>June<small>2 days</small></h3><div class="slot"><div class="time">15.06<br>MON</div><div class="les"><div class="row1"><b>Raja Sankranti</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">26.06<br>FRI</div><div class="les"><div class="row1"><b>Muharram</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>July<small>1 day</small></h3><div class="slot"><div class="time">16.07<br>THU</div><div class="les"><div class="row1"><b>Ratha Yatra</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>August<small>3 days</small></h3><div class="slot"><div class="time">15.08<br>SAT</div><div class="les"><div class="row1"><b>Independence Day</b> <span class="st o">Observe</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">26.08<br>WED</div><div class="les"><div class="row1"><b>Birthday of Prophet Muhammad</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">27.08<br>THU</div><div class="les"><div class="row1"><b>Jhulana Purnima / Raksha Bandhan</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>September<small>4 days</small></h3><div class="slot"><div class="time">04.09<br>FRI</div><div class="les"><div class="row1"><b>Janmastami</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">14.09<br>MON</div><div class="les"><div class="row1"><b>Ganesh Puja</b> <span class="st o">Observe</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">15.09<br>TUE</div><div class="les"><div class="row1"><b>Nuakhai</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">16.09<br>WED</div><div class="les"><div class="row1"><b>Day following Nuakhai</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>October<small>4 days</small></h3><div class="slot"><div class="time">02.10<br>FRI</div><div class="les"><div class="row1"><b>Gandhi Jayanti</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">17.10<br>SAT</div><div class="les"><div class="row1"><b>Mahasaptami</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">19.10<br>MON</div><div class="les"><div class="row1"><b>Mahanavami</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div><div class="slot"><div class="time">20.10<br>TUE</div><div class="les"><div class="row1"><b>Vijaya Dasami</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>November<small>1 day</small></h3><div class="slot"><div class="time">24.11<br>TUE</div><div class="les"><div class="row1"><b>Rahas Purnima / Kartik Purnima</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
+<div class="day"><h3>December<small>1 day</small></h3><div class="slot"><div class="time">25.12<br>FRI</div><div class="les"><div class="row1"><b>X-Mas Day</b> <span class="st h">Holiday</span> <span class="fac">BPUT, SU</span></div></div></div></div>
     </div>
     <h4 style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px">Festivals falling on Sundays (not separately declared)</h4>
     <ul class="sun">
