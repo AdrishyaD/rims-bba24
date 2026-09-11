@@ -1,7 +1,7 @@
 /* RIMS BBA '24 — service worker (offline app shell) */
-const CACHE = 'rimsbba24-v5';
+const CACHE = 'rimsbba24-v6';
 const ASSETS = [
-  '/', '/index.html', '/syllabus.html', '/internship.html', '/project.html',
+  '/', '/index.html', '/syllabus.html', '/internship.html', '/project.html', '/holidays.html',
   '/manifest.webmanifest', '/icon-192.png', '/icon-512.png',
   '/icon-512-maskable.png', '/apple-touch-icon.png', '/favicon-32.png', '/navmark.png'
 ];

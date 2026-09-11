@@ -6,6 +6,7 @@ Unofficial batch resource for the RIMS BBA batch of 2024, 5th Semester (Sections
 - **Syllabus** (`syllabus.html`) — full unit-wise syllabus for all eight papers, from the AICTE BBA (NEP-2020) Model Curriculum, Semester V.
 - **Internship Report & Viva** (`internship.html`) — SEC-702 report structure and viva evaluation.
 - **Semester Project** (`project.html`) — proposal-to-viva timeline, report skeleton and formatting guidelines.
+- **Holidays 2026** (`holidays.html`) — official RIMS holiday circular for calendar year 2026, transcribed in full.
 
 Static HTML, no build step. Every page carries a notice to verify details against official sources
 (department notice board, faculty, and official AICTE / Sambalpur University documents).

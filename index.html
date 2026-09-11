@@ -259,6 +259,22 @@
   .fillnote{background:#2a1a1d;border:1px solid #5a3338;border-left:3px solid #c8102e;
     border-radius:5px;padding:13px 15px;color:#f0dcdc;font-size:12.5px;line-height:1.7}
   .fillnote b{color:#fff;font-weight:700}
+
+  /* ---- assignments (pinned on top) ---- */
+  .awrap{max-width:1020px;margin:0 auto;padding:20px clamp(16px,4vw,32px) 0}
+  .assign{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .assign .ah{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--rail);color:#f4f5f4;flex-wrap:wrap}
+  .adot{width:8px;height:8px;border-radius:50%;background:#e05252;flex:none;animation:apulse 1.6s ease-in-out infinite}
+  @keyframes apulse{0%,100%{opacity:1}50%{opacity:.3}}
+  @media(prefers-reduced-motion:reduce){.adot{animation:none}}
+  .ah .alab{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .ah .adue{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#e05252;color:#fff;border-radius:3px;padding:3px 8px;white-space:nowrap}
+  .assign .ab{padding:14px 16px 16px}
+  .assign .atitle{font-family:"Fraunces",serif;font-weight:600;font-size:18px;margin-bottom:6px}
+  .assign .abrief{font-size:13.5px;color:#33383f;max-width:80ch}
+  .ameta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .ameta span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--common-bg);border-radius:3px;padding:4px 9px;color:#33383f}
+  .ameta span b{font-weight:700;color:var(--ink)}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
@@ -267,12 +283,29 @@
 <nav>
   <div class="navin">
     <a class="brand" href="index.html" style="text-decoration:none">RIMS <b>BBA</b> '24 / 5th sem</a>
-    <div class="navlinks"><a href="#timetable" class="on">Timetable</a><a href="syllabus.html">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html">Project</a></div>
+    <div class="navlinks"><a href="#timetable" class="on">Timetable</a><a href="syllabus.html">Syllabus</a><a href="internship.html">Internship Report</a><a href="project.html">Project</a><a href="holidays.html">Holidays</a></div>
   </div>
   <div class="spectrum"><i class="c"></i><i class="f"></i><i class="m"></i><i class="h"></i></div>
 </nav>
 <div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference &mdash; always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
 
+<section id="assignments">
+  <div class="awrap">
+    <div class="assign">
+      <div class="ah"><span class="adot"></span><span class="alab">Assignment &middot; Active</span><span class="adue">Due Mon 26 Oct</span></div>
+      <div class="ab">
+        <div class="atitle">LSCM &mdash; Supply Chain Process of a Company / Your Own Venture</div>
+        <p class="abrief">Draw and analyze the supply chain process of a company &mdash; or of a new venture introducing your own company idea &mdash; describe the supply chain process, and discuss the challenges &amp; solutions to make the supply chain more effective &amp; efficient.</p>
+        <div class="ameta">
+          <span><b>CC 502 LSCM</b> &middot; S. Jena</span>
+          <span>Due <b>Mon, 26 Oct 2026</b></span>
+          <span>Softcopy <b>&amp;</b> hardcopy accepted</span>
+        </div>
+        <p class="cnote" style="margin-top:10px">Transcribed from the brief noted in class &mdash; verify the exact wording, format and deadline with faculty.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Rourkela Institute of Management Studies</div>
