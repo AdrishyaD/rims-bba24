@@ -285,6 +285,10 @@
   .abadge .aarr{color:#e05252}
   @keyframes aglow{0%,100%{box-shadow:0 0 0 0 rgba(224,82,82,.4)}55%{box-shadow:0 0 0 7px rgba(224,82,82,0)}}
   @media(prefers-reduced-motion:reduce){.abadge{animation:none}}
+
+  /* ---- midsem badge (temporary) ---- */
+  .abadge.mid{background:#8f1d2c}
+  .abadge.mid .aarr{color:#ffd6da}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 <script>if('serviceWorker' in navigator){addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}</script>
@@ -299,7 +303,7 @@
 </nav>
 <div class="vwrap"><div class="verify"><b>Unofficial batch resource.</b> Everything on this page is compiled by students for quick reference &mdash; always verify dates, syllabus scope, formats and marks against official sources: the department notice board, your faculty / mentor, and the official AICTE &amp; Sambalpur University documents.</div></div>
 
-<div class="awrap" style="padding-top:18px"><a class="abadge" href="#assignments" aria-label="Jump to assignment details"><span class="adot"></span><span>1 Assignment due &middot; LSCM &middot; Mon 26 Oct</span><span class="aarr">&darr;</span></a></div>
+<div class="awrap" style="padding-top:18px;display:flex;flex-wrap:wrap;gap:10px"><!-- MIDSEM:START (badge) --><a class="abadge mid" href="#midsem" aria-label="Jump to midsem schedule"><span class="adot" style="background:#fff"></span><span>Midsem exams &middot; Tue 6 &ndash; Wed 7 Oct</span><span class="aarr">&darr;</span></a><!-- MIDSEM:END (badge) --><a class="abadge" href="#assignments" aria-label="Jump to assignment details"><span class="adot"></span><span>1 Assignment due &middot; LSCM &middot; Mon 26 Oct</span><span class="aarr">&darr;</span></a></div>
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Rourkela Institute of Management Studies</div>
@@ -363,11 +367,49 @@
   };
   window.setTrack=function(v){
     if(v==='all') grid.removeAttribute('data-track'); else grid.setAttribute('data-track',v);
+    var ex=document.getElementById('exgrid'); /* MIDSEM: exam grid follows the track filter */
+    if(ex){ if(v==='all') ex.removeAttribute('data-track'); else ex.setAttribute('data-track',v); }
     press(document.getElementById('ttfilter'),'data-t',v);
   };
 })();
 </script>
 
+<!-- MIDSEM:START (section) -->
+<section id="midsem">
+  <div class="wrap">
+    <div class="shead" style="padding-top:clamp(32px,5vw,52px)"><span class="snum" style="color:#c8102e;font-weight:700">HOT</span><h2>Mid-Semester Exams</h2></div>
+    <p class="ssub">UG Internal Examination 2026 · 1st sitting 3:00–4:00 pm, 2nd sitting 4:15–5:15 pm. Day 1 is the two common cores; Day 2 is your specialisation papers — sit only your own track.</p>
+
+    <div class="grid" id="exgrid">
+
+      <div class="day"><h3>Tuesday, 6 Oct<small>Day 1 · Common</small></h3>
+        <div class="slot"><div class="time">3:00<br>4:00</div><div class="les">
+          <div class="row1"><span class="tag common">1st</span> <b>SM</b> <span class="fac">CC 501 · Strategic Management</span></div>
+        </div></div>
+        <div class="slot"><div class="time">4:15<br>5:15</div><div class="les">
+          <div class="row1"><span class="tag common">2nd</span> <b>LSCM</b> <span class="fac">CC 502 · Logistics &amp; Supply Chain Mgmt</span></div>
+        </div></div>
+      </div>
+
+      <div class="day"><h3>Wednesday, 7 Oct<small>Day 2 · Specialisation</small></h3>
+        <div class="slot"><div class="time">3:00<br>4:00</div><div class="les">
+          <div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>B&amp;I</b> <span class="fac">DSE I 501 · Banking &amp; Insurance</span></div>
+          <div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>CB</b> <span class="fac">DSE I 501 · Consumer Behaviour</span></div>
+          <div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>TBO</b> <span class="fac">DSE I 501 · Team Building in Orgs</span></div>
+        </div></div>
+        <div class="slot"><div class="time">4:15<br>5:15</div><div class="les">
+          <div class="opt row1" data-track="fin"><span class="tag fin">FIN</span> <b>FMPS</b> <span class="fac">DSE II 502 · Financial Mkts, Products &amp; Services</span></div>
+          <div class="opt row1" data-track="mkt"><span class="tag mkt">MKT</span> <b>MS</b> <span class="fac">DSE II 502 · Marketing of Services</span></div>
+          <div class="opt row1" data-track="hr"><span class="tag hr">HR</span> <b>C&amp;M</b> <span class="fac">DSE II 502 · Coaching &amp; Mentoring</span></div>
+        </div></div>
+      </div>
+
+    </div>
+
+    <p class="cnote" style="margin-top:14px">Source: RIMS UG Internal Examination 2026 — BJMC, BBA &amp; BCA 5th Sem (2024–27) Mid-Semester Examination, ref IEXAM/DC/10, signed by the Internal Examination In-charge (UG). Verify against the official notice. This section comes down once the midsems are over &mdash; all the best!</p>
+  </div>
+</section>
+<!-- MIDSEM:END (section) -->
 <section id="assignments">
   <div class="wrap">
     <div class="shead" style="padding-top:clamp(32px,5vw,52px)"><span class="snum">01a</span><h2>Assignments</h2></div>
